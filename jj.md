@@ -109,16 +109,16 @@ Run `jj` with no arguments, which is an alias for `jj log`. You'll see a history
 of recent commits, with output like this:
 
 <pre>
-@  <u>q</u>lmqnzqo my@email 2025-03-18 10:30:32 6e075e98
+@  <b>q</b>lmqnzqo my@email 2025-03-18 10:30:32 6e075e98
 │  (empty) (no description set)
-◆  <u>z</u>zzzzzzz root() 00000000
+◆  <b>z</b>zzzzzzz root() 00000000
 </pre>
 
 The line marked with `@` is the current commit, the empty one jj created. `@` is
 also an alias to refer to the current commit in jj commands. (In Git, this is
 analagous to maybe `HEAD` or the index.)
 
-The first string of letters (<code><u>q</u>lmqnzqo</code> above) is the _change
+The first string of letters (<code><b>q</b>lmqnzqo</code> above) is the _change
 ID_. This is jj's name for the commit, and how you refer to it in commands. In your
 terminal, a prefix of the letters will be highlighted; in this tutorial, we mark
 them with an underline.  That prefix is
@@ -204,8 +204,8 @@ To start a new change, use `jj new`.
 
 <pre>
 $ jj new
-Working copy now at: <u>p</u>wnrkwpn ac9121f7 (empty) (no description set)
-Parent commit      : <u>q</u>lmqnzqo b2fa5372 add the foo file
+Working copy now at: <b>p</b>wnrkwpn ac9121f7 (empty) (no description set)
+Parent commit      : <b>q</b>lmqnzqo b2fa5372 add the foo file
 </pre>
 
 We now are editing a new commit `p`, and can do the same commands as before.
@@ -225,8 +225,8 @@ a new one:
 <pre>
 $ echo world &gt;&gt; foo
 $ jj commit -m 'make foo say hello, world'
-Working copy now at: <u>n</u>nlkypwz f58d0c2c (empty) (no description set)
-Parent commit      : <u>p</u>wnrkwpn 3d263ba5 make foo say hello, world
+Working copy now at: <b>n</b>nlkypwz f58d0c2c (empty) (no description set)
+Parent commit      : <b>p</b>wnrkwpn 3d263ba5 make foo say hello, world
 </pre>
 
 ### Abandoning a change
@@ -345,14 +345,14 @@ $ my_editor foo   # edit the file, insert a line at the top
 Save the edit, and run a command like `jj st`. You'll notice a new line in the
 output:
 
-<code>
+<pre>
 $ jj st
 <b>Rebased 1 descendant commits onto updated working copy</b>
 Working copy changes:
 A foo
-Working copy : <u>q</u>lmqnzqo 763dc940 add a foo file that says hello
-Parent commit: <u>z</u>zzzzzzz 00000000 (empty) (no description set)
-</code>
+Working copy : <b>q</b>lmqnzqo 763dc940 add a foo file that says hello
+Parent commit: <b>z</b>zzzzzzz 00000000 (empty) (no description set)
+</pre>
 
 What happened? When you ran the jj command, jj implicitly integrated the file
 edits you have made into the current commit, and then rebased any downstream
@@ -379,20 +379,20 @@ greeting:
 
 <pre>
 $ jj new q
-Working copy now at: <u>u</u>kuqsrnl 247f710f (empty) (no description set)
-Parent commit      : <u>q</u>lmqnzqo 763dc940 add a foo file that says hello
+Working copy now at: <b>u</b>kuqsrnl 247f710f (empty) (no description set)
+Parent commit      : <b>q</b>lmqnzqo 763dc940 add a foo file that says hello
 </pre>
 
 Now run `jj log`:
 
 <pre>
-@  <u>v</u>ukpmpko my@email 2025-03-18 11:49:59 2d92d549
+@  <b>v</b>ukpmpko my@email 2025-03-18 11:49:59 2d92d549
 │  (empty) (no description set)
-│ ○  <u>p</u>wnrkwpn my@email 2025-03-18 11:25:43 9759c1c7
+│ ○  <b>p</b>wnrkwpn my@email 2025-03-18 11:25:43 9759c1c7
 ├─╯  make foo say hello, world
-○  <u>q</u>lmqnzqo my@email 2025-03-18 11:25:43 git_head() 763dc940
+○  <b>q</b>lmqnzqo my@email 2025-03-18 11:25:43 git_head() 763dc940
 │  add a foo file that says hello
-◆  <u>z</u>zzzzzzz root() 00000000
+◆  <b>z</b>zzzzzzz root() 00000000
 </pre>
 
 The log now shows a branched tree. Unlike Git, jj does not have a notion of a
@@ -451,9 +451,9 @@ Now run `jj` to see what happened:
 
 <pre>
 $ jj
-×  <u>p</u>wnrkwpn evan.martin@gmail.com 2025-03-18 12:53:50 08b3e414 conflict
+×  <b>p</b>wnrkwpn evan.martin@gmail.com 2025-03-18 12:53:50 08b3e414 conflict
 │  make foo say hello, world
-@  <u>q</u>lmqnzqo evan.martin@gmail.com 2025-03-18 12:53:50 d6b14a5d
+@  <b>q</b>lmqnzqo evan.martin@gmail.com 2025-03-18 12:53:50 d6b14a5d
 │  add a foo file that says hello
 ◆  zzzzzzzz root() 00000000
 </pre>
@@ -471,8 +471,8 @@ with `jj edit` or `jj new`+`jj squash`.  jj will warn you about the conflicting 
 
 <pre>
 $ jj edit p
-Working copy now at: <u>p</u>wnrkwpn 08b3e414 (conflict) make foo say hello, world
-Parent commit      : <u>q</u>lmqnzqo d6b14a5d add a foo file that says hello
+Working copy now at: <b>p</b>wnrkwpn 08b3e414 (conflict) make foo say hello, world
+Parent commit      : <b>q</b>lmqnzqo d6b14a5d add a foo file that says hello
 Added 0 files, modified 1 files, removed 0 files
 There are unresolved conflicts at these paths:
 foo    2-sided conflict
