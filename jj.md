@@ -421,7 +421,7 @@ based on X, and then `jj squash` when you're done with your edits.  When you
 move elsewhere (via `jj new` or `jj edit`) the empty temporary commit you've been using
 on will be automatically cleaned up.
 
-## squash and the Git index
+### squash and the Git index
 
 Advanced Git users might be accustomed to building up a single
 change by incrementally adding parts of it to the index, which in Git can be
@@ -434,7 +434,7 @@ commits:
    first commit.
 4. Repeat step 3 as many times as necessary.
 
-## Conflicts
+### Conflicts
 
 We now have the understanding necessary to understand conflicts.
 
