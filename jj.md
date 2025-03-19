@@ -32,9 +32,8 @@ literally `jj edit <commit>`.
 
 <details>
 <summary>How can that actually work?</summary>
-It's an implementation detail, but in practice
-whenever you run a jj command it updates its state to make the above stay
-true.
+It's an implementation detail, but in practice whenever you run a jj
+command it updates its state to make the above stay true.
 </details>
 
 This idea seems small at first but as we'll see it has far-reaching
@@ -49,9 +48,8 @@ consequences. For a sales pitch, though, here are some:
 - If you want to fix a typo or change the description of an old commit, you can
   jump directly to that commit and just make your edits, just as you would in a
   new change. (Subsumes `git commit --amend` and various `rebase -i` workflows.)
-- It's inevitable that some operations, like rebases and merges, can create
-  conflicts. In jj rebases and merges immediately succeed and this conflict
-  state is just stored in the relevant commits. You resolve the conflicts by
+- When an operation like a rebase or a merge causes conflicts, jj just stores
+  this conflicted state in the relevant commits. You resolve the conflicts by
   editing those commits like any other. (This subsumes the Git "currently in a
   rebase" state and associated `rebase --continue` etc. commands.)
 
@@ -77,8 +75,8 @@ $ jj config set --user user.emil "my@email.address"
 ### Repo init
 
 To learn, you'll need a repository to run commands on. You can create a new
-repository or (maybe better for learning) pick an existing Git repository so you
-have some real files to work with.
+repository or pick an existing Git repository so you have some real files to
+work with.
 
 jj atop Git can work in two modes: the default, where the Git parts are kept
 hidden within the `.jj` directory, or _colocated_, where your directory is both
@@ -119,20 +117,21 @@ also an alias to refer to the current commit in jj commands. (In Git, this is
 analagous to maybe `HEAD` or the index.)
 
 The first string of letters (<code><b>q</b>lmqnzqo</code> above) is the _change
-ID_. This is jj's name for the commit, and how you refer to it in commands. In your
-terminal, a prefix of the letters will be highlighted; in this tutorial, we mark
-them with an underline.  That prefix is
-sufficient to uniquely identify the commit, so you can write the change ID as just `q`
-if you need to refer to this commit in a command.
+ID_. This is jj's name for the commit, and how you refer to it in commands. In
+your terminal, a prefix of the letters will be highlighted; in this tutorial, we
+mark them with an underline. That prefix is sufficient to uniquely identify the
+commit, so you can write the change ID as just `q` if you need to refer to this
+commit in a command.
 
 > [!IMPORTANT]
 > In this tutorial the commit was named `q`, but in your checkout it will likely
-> have a different name. Substitute your commit's name in place of `q` in all the commands that follow.
+> have a different name. Substitute your commit's name in place of `q` in all
+> the commands that follow.
 
 On the far right is the Git ID for this commit. This may change as the commit
 changes, and is mostly only useful for Git commands. You can distinguish jj
 change IDs from Git IDs because they don't use the same letters; Git IDs are
-hex, jj IDs are other letters.
+hex, while jj IDs don't use those digits.
 
 In the next line, `(empty)` means this commit contains no file changes, and
 `(no description set)` is where the description would be if we had one. But this
@@ -162,8 +161,8 @@ Create or edit a file:
 $ echo hello > foo
 ```
 
-Per the rules of jj, this edit to a file is integrated into your current commit.
-There is no "I'm done, commit this" step; it's already done.
+Per the rules of jj, this edit to a file is considered part of your current
+commit. There is no "I'm done, commit this" command to run.
 
 You can see this by running `jj status` (or `jj st`, for short), which
 summarizes the current commit and mentions that it adds a file:
@@ -208,7 +207,8 @@ Working copy now at: <b>p</b>wnrkwpn ac9121f7 (empty) (no description set)
 Parent commit      : <b>q</b>lmqnzqo b2fa5372 add the foo file
 </pre>
 
-We now are editing a new commit `p`, and can do the same commands as before.
+We now are editing a new commit `p`, and can do the same commands with it as the
+first commit.
 
 > [!WARNING]
 > As you get started with jj, forgetting to start new commits before editing
@@ -219,8 +219,8 @@ As a helpful alias, the command `jj commit` combines running `jj desc` followed
 by `jj new`. It's especially useful if you haven't given your commit a
 description already.
 
-Add another line to foo and use `jj commit` to describe the current commit and start 
-a new one:
+Add another line to foo and use `jj commit` to describe the current commit and
+start a new one:
 
 <pre>
 $ echo world &gt;&gt; foo
@@ -240,15 +240,15 @@ $ rm foo   # or edited it, etc.
 There are two ways to undo this, with two different ways of thinking about it.
 
 One is `jj restore`, which copies file contents from a different commit. With no
-arguments it copies all files from the previous commit, emptying the commit of
-any file changes, effectively clobbering any changes you've made. This preserves
-the current commit's description and change ID.
+arguments it copies all files from the previous commit, emptying the current
+commit of any file changes, effectively clobbering any changes you've made. This
+preserves the current commit's description and change ID.
 
 The other option is `jj abandon`, which throws away the current commit. jj will
 recreate a new empty commit in its place, with a new change ID.
 
-If you did try making a change here, undo it using one of the above commands to prepare for
-the next chapter.
+If you did try making a change here, undo it using one of the above commands to
+prepare for the next chapter.
 
 ### Review
 
@@ -305,9 +305,9 @@ Like `diff`, you can now see that `jj desc` without flags edits `@`.
 
 Users coming to jj from another version control system might raise an eyebrow
 here: in jj, your commit history is generally freely editable. In case of making
-mistakes, jj has powerful undo functionality that we'll get to later. When
-working with Git, jj (by default) won't let you edit commits that (to a first
-approximation) exist in remote branches already.
+mistakes, jj has powerful undo functionality that we'll get to later. (When
+working with Git, jj has additional functionailty related to not accidentally
+rewriting commits from remote branches; we'll get to it later.)
 
 ### Jumping around in history
 
@@ -363,7 +363,7 @@ anything that came later, nothing else complained.
 
 In this chapter, we learned:
 
-- specifying revisions using the `-r` flag to `diff` and `desc`
+- specify revisions using the `-r` flag to `diff` and `desc`
 - there exists a 'revset' language for specifying revisions
 - history is mutable
 - `jj edit`: jump to a specific change and begin editing it
@@ -403,30 +403,31 @@ are saved, and you can jump between them with `jj edit` as you desire.
 
 When you want to fix a typo in a commit, using `jj edit` to jump directly to it
 and editing the file directly is the quickest way. But if you make a mistake
-(cat on the keyboard?) there isn't a way to see your new edits as distinct from
-the existing edits.
+(cat on the keyboard?) there isn't a way to diff or undo your new edits as
+distinct from the existing edits.
 
 An alternative workflow is instead to create a new commit before editing, like
-we just did in the previous section. After editing files, you run `jj diff` to see just the
-new changes you've made. When you're happy with them, you can run `jj squash` to
-"squash" the current commit into the previous one, merging their changes
-together. (Git users might recognize the "squash" terminology from
-`git rebase -i`.) After running `jj squash`, you're left pointed at an empty
-commit; if you go elsewhere with `jj edit`, it will be automatically abandoned.
+we just did in the previous section. After editing files, you run `jj diff` to
+see just the new changes you've made.
+
+When you're happy with the change, the `jj squash` command will "squash" the
+current commit into the previous one, merging their changes together. (Git users
+might recognize the "squash" terminology from `git rebase -i`.) After running
+`jj squash`, you're left pointed at an empty commit; if you go elsewhere with
+`jj edit`, it will be automatically abandoned.
 
 Because it's free to make new commits anywhere, one way to look at the squash
-workflow is to *always* use `jj new` when editing history.  That is, if you want
-to make a change to some commit X, you instead say `jj new X` to start a new commit
-based on X, and then `jj squash` when you're done with your edits.  When you
-move elsewhere (via `jj new` or `jj edit`) the empty temporary commit you've been using
-on will be automatically cleaned up.
+workflow is to _always_ use `jj new` when editing history. That is, if you want
+to make a change to some commit X, you instead say `jj new X` to start a new
+commit based on X, and then `jj squash` when you're done with your edits. When
+you move elsewhere (via `jj new` or `jj edit`) the empty temporary commit you've
+been using on will be automatically cleaned up.
 
 ### squash and the Git index
 
-Advanced Git users might be accustomed to building up a single
-change by incrementally adding parts of it to the index, which in Git can be
-thought of as a staging area for a pending change. jj models this using regular
-commits:
+Advanced Git users might be accustomed to building up a single change by
+incrementally adding parts of it to the index, which in Git can be thought of as
+a staging area for a pending change. jj models this using regular commits:
 
 1. Start a new commit (`jj new`), possibly give it an initial description
 2. Start a new commit on top of that (`jj new` again).
@@ -438,9 +439,9 @@ commits:
 
 We now have the understanding necessary to understand conflicts.
 
-Modify your first
-change (using either `jj edit` or `jj new`+`jj squash`) in such a way that the other
-change will conflict with it.  For example, change "hello" to "goodbye".
+Modify your first change (using either `jj edit` or `jj new`+`jj squash`) in
+such a way that the other change will conflict with it. For example, change
+"hello" to "goodbye".
 
 ```
 $ jj edit q
@@ -458,16 +459,17 @@ $ jj
 ◆  zzzzzzzz root() 00000000
 </pre>
 
-The top commit is marked with an x, in red, and the `conflict` marker to indicate that
-this commit is now conflicting: we made a change to commit `q` that means that `p` may
-no longer make sense.
+The top commit is marked with an x, in red, and the `conflict` marker to
+indicate that this commit is now conflicting: we made a change to commit `q`
+that means that `p` may no longer make sense.
 
-Unlike Git (or any other VCS I've used!), in jj conflicts are just allowed to happen,
-without requiring any immediate action.  You can go on working on other things and the
-conflict state is just stored in the repository.
+In jj conflicts are just allowed to happen, without requiring any immediate
+action. You can go on working on other things and the conflict state is stored
+in the repository.
 
-When it's time to fix the conflict, you edit that commit as you would any other, either
-with `jj edit` or `jj new`+`jj squash`.  jj will warn you about the conflicting state:
+When it's time to fix the conflict, you edit that commit as you would any other,
+either with `jj edit` or `jj new`+`jj squash`. jj will warn you about the
+conflicting state:
 
 <pre>
 $ jj edit p
@@ -478,14 +480,15 @@ There are unresolved conflicts at these paths:
 foo    2-sided conflict
 </pre>
 
-When you open the conflicting file in your editor, you will see conflict markers in
-the file.  If you fix these conflicts (by editing them out), jj will notice and mark
-the commit as no longer conflicting.
+When you open the conflicting file in your editor, you will see conflict markers
+in the file. If you fix these conflicts (by editing them out), jj will notice
+and mark the commit as no longer conflicting.
 
-If you make an edit early in a tall stack of commits, it's possible each will conflict.
-But it's also possible after fixing the first, jj will update the downstream ones and
-discover the conflict has been resolved.  So to resolve a series of conflicts, just
-start at the earliest commit and work your way forwards.
+If you make an edit early in a stack of commits, it's possible each will
+conflict. But it's also possible after fixing the first, jj will update the
+downstream ones and discover the conflict has been resolved. So to resolve a
+series of conflicts, just start at the earliest conflict and work your way
+forwards.
 
 ### Review
 
@@ -493,10 +496,10 @@ In this chapter, we learned:
 
 - `jj new` can create commits anywhere, producing a non-linear history
 - `jj squash`: squashes a commit into its parent
-- the "squash" workflow involves creating new commits any time you want to make a change
+- the "squash" workflow create new commits any time you want to make a change
 - edits may produce conflicts, which show up in the history
-- fixing conflicting files in a conflicting commit implicitly fixes the conflict state
-  that that commit and possibly downstream ones
+- fixing conflicting files in a conflicting commit implicitly fixes the conflict
+  state that that commit and possibly downstream ones
 
 ## Remaining outline/notes
 
@@ -504,6 +507,9 @@ In this chapter, we learned:
 > Everything below this point is TODO
 
 ## Working with Git
+
+- branches
+- colocated repos (what do Git commands do?)
 
 ## Workflow recipes
 
