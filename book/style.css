@@ -1,0 +1,10 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: auto;
+    max-width: 70ex;
+}
+
+pre,
+code {
+    font-family: WebKitWorkaround, monospace;
+}
