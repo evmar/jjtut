@@ -16,6 +16,7 @@ import (
 type State struct {
 	src, dst string
 
+	toc  template.HTML
 	tmpl *template.Template
 }
 
@@ -41,9 +42,10 @@ func (s *State) render(path string) error {
 	defer f.Close()
 
 	return s.tmpl.Execute(f, struct {
-		Body template.HTML
-		Root string
+		Nav, Body template.HTML
+		Root      string
 	}{
+		Nav:  template.HTML(s.toc),
 		Body: template.HTML(string(html)),
 		Root: root,
 	})
@@ -58,6 +60,9 @@ func (s *State) renderAll() error {
 		if !strings.HasSuffix(path, ".md") {
 			return nil
 		}
+		if filepath.Base(path) == "contents.md" {
+			return nil
+		}
 		path, err = filepath.Rel(s.src, path)
 		if err != nil {
 			return err
@@ -65,6 +70,15 @@ func (s *State) renderAll() error {
 		fmt.Println(path)
 		return s.render(path)
 	})
+}
+
+func (s *State) loadTOC() (template.HTML, error) {
+	md, err := os.ReadFile(filepath.Join(s.src, "contents.md"))
+	if err != nil {
+		return template.HTML(""), err
+	}
+	html := markdown.ToHTML(md, parser.New(), html.NewRenderer(html.RendererOptions{}))
+	return template.HTML(string(html)), nil
 }
 
 func run() error {
@@ -90,6 +104,12 @@ func run() error {
 		dst:  "html",
 		tmpl: tmpl,
 	}
+	toc, err := state.loadTOC()
+	if err != nil {
+		return err
+	}
+	state.toc = toc
+
 	return state.renderAll()
 }
 

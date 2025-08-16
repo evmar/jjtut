@@ -1,10 +1,22 @@
 body {
     font-family: "Open Sans", sans-serif;
-    margin: auto;
+    display: flex;
+}
+
+nav {
+    width: 25ex;
+}
+
+main {
+    flex: 1;
     max-width: 70ex;
 }
 
 pre,
 code {
     font-family: WebKitWorkaround, monospace;
+}
+
+h2 {
+    margin-top: 0;
 }
