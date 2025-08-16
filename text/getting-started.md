@@ -11,6 +11,21 @@ $ jj config set --user user.name "My Name"
 $ jj config set --user user.emil "my@email.address"
 ```
 
+If you run `jj` with no arguments, it prints a help message that suggests a
+default configuration that you should adopt.
+
+```
+$ jj
+Hint: Use `jj -h` for a list of available commands.
+Run `jj config set --user ui.default-command log` to disable this message.
+```
+
+So run that too:
+
+```
+$ jj config set --user ui.default-command log
+```
+
 ## Repo setup
 
 To learn, you'll need a repository to run commands on. You can create a new
