@@ -33,7 +33,7 @@ func (s *State) render(path string) error {
 	body := fmt.Sprintf(`<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="%sstyle.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <main>%s</main>`, root, html)
 
 	dst := filepath.Join(s.dst, strings.TrimSuffix(path, ".md")+".html")
