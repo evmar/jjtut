@@ -1,5 +1,5 @@
 - [Introduction](intro.html)
-- [Setup](setup.html)
+- [Getting started](getting-started.html)
 - [First commands](first-commands.html)
 - [Basic workflow](basic-workflow.html)
 - [Basic history](basic-history.html)
