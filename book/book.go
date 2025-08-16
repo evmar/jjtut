@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -14,6 +15,8 @@ import (
 
 type State struct {
 	src, dst string
+
+	tmpl *template.Template
 }
 
 func (s *State) render(path string) error {
@@ -30,14 +33,20 @@ func (s *State) render(path string) error {
 
 	root := strings.Repeat("../", strings.Count(path, "/"))
 
-	body := fmt.Sprintf(`<!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="%sstyle.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<main>%s</main>`, root, html)
-
 	dst := filepath.Join(s.dst, strings.TrimSuffix(path, ".md")+".html")
-	return os.WriteFile(dst, []byte(body), 0666)
+	f, err := os.Create(dst)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	return s.tmpl.Execute(f, struct {
+		Body template.HTML
+		Root string
+	}{
+		Body: template.HTML(string(html)),
+		Root: root,
+	})
 }
 
 func (s *State) renderAll() error {
@@ -59,9 +68,13 @@ func (s *State) renderAll() error {
 }
 
 func run() error {
-	state := State{
-		src: "text",
-		dst: "html",
+	page, err := os.ReadFile("book/page.gotmpl")
+	if err != nil {
+		return err
+	}
+	tmpl, err := template.New("page").Parse(string(page))
+	if err != nil {
+		return err
 	}
 
 	css, err := os.ReadFile("book/style.css")
@@ -72,6 +85,11 @@ func run() error {
 		return err
 	}
 
+	state := State{
+		src:  "text",
+		dst:  "html",
+		tmpl: tmpl,
+	}
 	return state.renderAll()
 }
 
