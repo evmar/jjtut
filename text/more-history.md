@@ -1,3 +1,5 @@
+# More History
+
 So far we've created a linear sequence of commits. But we are free to start new
 commits from anywhere. Suppose we want to try out greeting someone else. Let's
 start a new change starting from our initial "hello" file and add a different
@@ -25,7 +27,7 @@ The log now shows a branched tree. Unlike Git, jj does not have a notion of a
 "current branch" that has a single head commit. Instead, any commits you create
 are saved, and you can jump between them with `jj edit` as you desire.
 
-### squash and the squash workflow
+## squash and the squash workflow
 
 When you want to fix a typo in a commit, using `jj edit` to jump directly to it
 and editing the file directly is the quickest way. But if you make a mistake
@@ -49,7 +51,7 @@ commit based on X, and then `jj squash` when you're done with your edits. When
 you move elsewhere (via `jj new` or `jj edit`) the empty temporary commit you've
 been using on will be automatically cleaned up.
 
-### squash and the Git index
+## squash and the Git index
 
 Advanced Git users might be accustomed to building up a single change by
 incrementally adding parts of it to the index, which in Git can be thought of as
@@ -61,7 +63,7 @@ a staging area for a pending change. jj models this using regular commits:
    first commit.
 4. Repeat step 3 as many times as necessary.
 
-### Conflicts
+## Conflicts
 
 We now have the understanding necessary to understand conflicts.
 
@@ -116,7 +118,7 @@ downstream ones and discover the conflict has been resolved. So to resolve a
 series of conflicts, just start at the earliest conflict and work your way
 forwards.
 
-### Review
+## Review
 
 In this chapter, we learned:
 

@@ -1,3 +1,5 @@
+# Basic history
+
 Run `jj log`. Our repository should have three commits. From the top: an empty
 commit, the one that added "world", and the one that added the "hello" file
 (which is named `q` in this tutorial).
@@ -22,7 +24,7 @@ understand that `jj diff` is a short way of saying `jj diff -r @`. (Coming from
 Git, with its various modes for comparing files, the index, and trees, this was
 such breath of fresh air!)
 
-### Modifying history
+## Modifying history
 
 Another command that accepts which revision to edit by `-r` is `desc`. You can
 change the description of our first commit to be more descriptive:
@@ -39,7 +41,7 @@ mistakes, jj has powerful undo functionality that we'll get to later. (When
 working with Git, jj has additional functionailty related to not accidentally
 rewriting commits from remote branches; we'll get to it later.)
 
-### Jumping around in history
+## Jumping around in history
 
 Alternatively, you can change which commit you're currently editing with
 `jj edit`. Jump back to the first commit we created:
@@ -89,7 +91,7 @@ edits you have made into the current commit, and then rebased any downstream
 commits to integrate that change. Because your edit didn't conflict with
 anything that came later, nothing else complained.
 
-### Review
+## Review
 
 In this chapter, we learned:
 

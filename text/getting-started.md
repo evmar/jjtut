@@ -1,3 +1,5 @@
+# Getting Started
+
 ## jj setup
 
 Install by following the

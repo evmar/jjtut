@@ -1,6 +1,6 @@
-## First commands
+# First commands
 
-### Initial status
+## Initial status
 
 On a fresh repository, jj creates an initial empty commit for you.
 
@@ -42,7 +42,7 @@ commit is brand new so it's both empty and descriptionless.
 beginning of history, since my repository is new. In a repository with more
 history you'd instead see those commits.)
 
-### Review
+## Review
 
 In this chapter, we learned about:
 

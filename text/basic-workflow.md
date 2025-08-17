@@ -1,6 +1,8 @@
+# Basic workflow
+
 Next, let's create some changes.
 
-### My first change
+## My first change
 
 Create or edit a file:
 
@@ -44,7 +46,7 @@ something. But note that this command only adds information to the current
 commit, which existed from the start. We could have just as well done it before
 making any file edits.
 
-### My second change
+## My second change
 
 To start a new change, use `jj new`.
 
@@ -76,7 +78,7 @@ Working copy now at: <b>n</b>nlkypwz f58d0c2c (empty) (no description set)
 Parent commit      : <b>p</b>wnrkwpn 3d263ba5 make foo say hello, world
 </pre>
 
-### Abandoning a change
+## Abandoning a change
 
 Suppose next you accidentally clobbered your important work:
 

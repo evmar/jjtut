@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Jujutsu ("jj") is a version control system that is both simple and powerful.
 
