@@ -1,4 +1,3 @@
-
 ## Remaining outline/notes
 
 > [!WARNING]

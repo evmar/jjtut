@@ -1,8 +1,27 @@
-# Basic workflow
+# The basics
 
-Next, let's create some changes.
+On a fresh respository, run `jj status` (or `jj st` for short) to show the
+current status.
 
-## My first change
+```
+$ jj st
+The working copy has no changes.
+Working copy  (@) : qlmqnzqo 7437703d (empty) (no description set)
+Parent commit (@-): zzzzzzzz 00000000 (empty) (no description set)
+```
+
+This shows the current working copy commit is named `qlmqnzqo`. (It will be
+different for you.) jj commit IDs are stable, in that if you edit files, change
+their description, or move them around, the commit ID will not change. Currently
+the commit is `(empty)` (with no file changes in it) and it has
+`(no description set)`.
+
+The hex `7437703d` is the Git ID for the commit. (It will be different for you.)
+This will change as the commit changes. You can distinguish jj change IDs from
+Git IDs because they don't use the same letters; Git IDs are hex, while jj IDs
+don't use those digits.
+
+## First change
 
 Create or edit a file:
 
@@ -13,8 +32,7 @@ $ echo hello > foo
 Per the rules of jj, this edit to a file is considered part of your current
 commit. There is no "I'm done, commit this" command to run.
 
-You can see this by running `jj status` (or `jj st`, for short), which
-summarizes the current commit and mentions that it adds a file:
+You can see this by running `jj st` again:
 
 ```
 $ jj st
@@ -65,8 +83,7 @@ first commit.
 > at first but will get easier.
 
 As a helpful alias, the command `jj commit` combines running `jj desc` followed
-by `jj new`. It's especially useful if you haven't given your commit a
-description already.
+by `jj new`. It's useful if you haven't given your commit a description already.
 
 Add another line to foo and use `jj commit` to describe the current commit and
 start a new one:

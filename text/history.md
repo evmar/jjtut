@@ -1,8 +1,18 @@
-# Basic history
+# History
 
 Run `jj log`. Our repository should have three commits. From the top: an empty
 commit, the one that added "world", and the one that added the "hello" file
 (which is named `q` in this tutorial).
+
+```
+@  umnvtwlo my@email 2025-08-17 09:00:50 20de4517
+│  (empty) (no description set)
+○  pwnrkwpn my@email 2025-03-18 12:53:50 08b3e414
+│  make foo say hello, world
+○  qlmqnzqo my@email 2025-03-18 12:53:50 git_head() d6b14a5d
+│  add a foo file that says hello
+◆  zzzzzzzz root() 00000000
+```
 
 We've used `jj diff` to see the diff of the current change. `diff` (and many
 other jj commands) can also be told which change to show by using the `-r` flag.

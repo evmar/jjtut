@@ -45,8 +45,8 @@ working on something else, your work is already saved. (You no longer need Git's
 
 For another example, if you need to fix a typo in an old commit, you can jump
 directly to it and just make the edits. (This replaces many `git rebase -i`
-workflows.) Changing the description of an old commit is the same as changing
-the description of the newest one.
+workflows.) Changing the description of an old commit is the same command as
+changing the description of the newest one.
 
 This approach has further implications on how merge/rebase conflicts work. There
 is no "rebase in progress" state or commands like `git rebase --continue`.
