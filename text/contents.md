@@ -1,5 +1,5 @@
 1. [Introduction](intro.html)
 1. [Getting started](getting-started.html)
 1. [Basics](basics.html)
-1. [Basic history](basic-history.html)
+1. [History](history.html)
 1. [More history](more-history.html)

@@ -11,15 +11,16 @@ Parent commit (@-): zzzzzzzz 00000000 (empty) (no description set)
 ```
 
 This shows the current working copy commit is named `qlmqnzqo`. (It will be
-different for you.) jj commit IDs are stable, in that if you edit files, change
-their description, or move them around, the commit ID will not change. Currently
-the commit is `(empty)` (with no file changes in it) and it has
-`(no description set)`.
+different for you.) jj commit IDs are stable: if you edit files, change their
+description, or move them around, the commit ID will not change.
 
 The hex `7437703d` is the Git ID for the commit. (It will be different for you.)
 This will change as the commit changes. You can distinguish jj change IDs from
 Git IDs because they don't use the same letters; Git IDs are hex, while jj IDs
 don't use those digits.
+
+Currently the commit is `(empty)` (with no file changes in it) and it has
+`(no description set)`.
 
 ## First change
 
@@ -42,8 +43,10 @@ Working copy : qlmqnzqo 2a5c0d7e (no description set)
 Parent commit: zzzzzzzz 00000000 (empty) (no description set)
 ```
 
-You can also see this by running `jj diff`, which shows a diff of the current
-commit:
+This is not saying "there is a new file named `foo` that is ready to add". It is
+saying "the current commit contains a file add named `foo`".
+
+You can also see this by running `jj diff`, which shows the diff of a commit:
 
 ```
 $ jj diff
@@ -64,15 +67,15 @@ something. But note that this command only adds information to the current
 commit, which existed from the start. We could have just as well done it before
 making any file edits.
 
-## My second change
+## Second change
 
 To start a new change, use `jj new`.
 
-<pre>
+```
 $ jj new
-Working copy now at: <b>p</b>wnrkwpn ac9121f7 (empty) (no description set)
-Parent commit      : <b>q</b>lmqnzqo b2fa5372 add the foo file
-</pre>
+Working copy now at: pwnrkwpn ac9121f7 (empty) (no description set)
+Parent commit      : qlmqnzqo b2fa5372 add the foo file
+```
 
 We now are editing a new commit `p`, and can do the same commands with it as the
 first commit.
@@ -88,12 +91,12 @@ by `jj new`. It's useful if you haven't given your commit a description already.
 Add another line to foo and use `jj commit` to describe the current commit and
 start a new one:
 
-<pre>
-$ echo world &gt;&gt; foo
+```
+$ echo world >> foo
 $ jj commit -m 'make foo say hello, world'
-Working copy now at: <b>n</b>nlkypwz f58d0c2c (empty) (no description set)
-Parent commit      : <b>p</b>wnrkwpn 3d263ba5 make foo say hello, world
-</pre>
+Working copy now at: nnlkypwz f58d0c2c (empty) (no description set)
+Parent commit      : pwnrkwpn 3d263ba5 make foo say hello, world
+```
 
 ## Abandoning a change
 

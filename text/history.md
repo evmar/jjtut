@@ -1,8 +1,6 @@
 # History
 
-Run `jj log`. Our repository should have three commits. From the top: an empty
-commit, the one that added "world", and the one that added the "hello" file
-(which is named `q` in this tutorial).
+Run `jj log` to see the repository history.
 
 ```
 @  umnvtwlo my@email 2025-08-17 09:00:50 20de4517
@@ -14,10 +12,23 @@ commit, the one that added "world", and the one that added the "hello" file
 ◆  zzzzzzzz root() 00000000
 ```
 
+From the top:
+
+1. umnvtwlo is an empty commit
+1. pwnrkwpn and qlmqnzqo were our two edits
+1. zzzzzzzz is a special "root" commit that starts the repository and is is
+   always empty
+
+In a terminal, these commits will have some prefix (often the initial letter)
+highlighted or in bold. This indicates the unique prefix of the commit that can
+be used to refer to it in commands.
+
+## Diffs and revsets
+
 We've used `jj diff` to see the diff of the current change. `diff` (and many
 other jj commands) can also be told which change to show by using the `-r` flag.
 
-To see the diff of a specific change:
+Here, I use `q` as the unique prefix of the commit above:
 
 ```
 $ jj diff -r q
@@ -30,9 +41,7 @@ continue to pass the explicit names we've been using, but there is one alias
 worth knowing about:
 
 The alias `@` refers to the current change. Putting it together, you can now
-understand that `jj diff` is a short way of saying `jj diff -r @`. (Coming from
-Git, with its various modes for comparing files, the index, and trees, this was
-such breath of fresh air!)
+understand that `jj diff` is a short way of saying `jj diff -r @`.
 
 ## Modifying history
 
@@ -70,7 +79,7 @@ If you run `jj log` now, you might notice that our topmost commit disappeared!
 This is because the commit was empty, and `jj` abandons empty commits when you
 move away from them. You can create a new one in its place with `jj new p`,
 where `p` is the name of the commit to start from. Alternatively, if you had
-made any changes (or given a description to) your new commit, it would not have
+made any changes (or given a description) to your new commit, it would not have
 been abandoned.
 
 ### Editing history
@@ -96,10 +105,11 @@ Working copy : <b>q</b>lmqnzqo 763dc940 add a foo file that says hello
 Parent commit: <b>z</b>zzzzzzz 00000000 (empty) (no description set)
 </pre>
 
-What happened? When you ran the jj command, jj implicitly integrated the file
-edits you have made into the current commit, and then rebased any downstream
-commits to integrate that change. Because your edit didn't conflict with
-anything that came later, nothing else complained.
+Note the line that says "Rebased 1 descendant commits onto updated working
+copy". What happened? When you ran the jj command, jj implicitly integrated the
+file edits you have made into the current commit, and then rebased any
+downstream commits to integrate that change. Because your edit didn't conflict
+with anything that came later, everything went fine.
 
 ## Review
 
