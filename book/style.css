@@ -20,3 +20,8 @@ code {
 h2 {
     margin-top: 0;
 }
+
+.warning {
+    background: #ffaaaa;
+    padding: 1ex;
+}
