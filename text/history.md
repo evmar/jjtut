@@ -8,7 +8,7 @@ Run `jj log` to see the repository history.
 ○  pwnrkwpn my@email 2025-03-18 12:53:50 08b3e414
 │  make foo say hello, world
 ○  qlmqnzqo my@email 2025-03-18 12:53:50 git_head() d6b14a5d
-│  add a foo file that says hello
+│  add the foo file
 ◆  zzzzzzzz root() 00000000
 ```
 
