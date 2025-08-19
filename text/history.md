@@ -36,17 +36,17 @@ $ jj diff -r q
 ```
 
 The argument passed to `-r` is called a _revset_, and in jj it is a miniature
-programming language for specifying commits. For tutorial purposes we can just
-continue to pass the explicit names we've been using, but there is one alias
-worth knowing about:
+[programming language for specifying commits](https://jj-vcs.github.io/jj/latest/revsets/).
+The alias `@` refers to the current change. For an example, you can use `@-` to
+indicate "the commit before the current one".
 
-The alias `@` refers to the current change. Putting it together, you can now
-understand that `jj diff` is a short way of saying `jj diff -r @`.
+Putting it together, you can now understand that `jj diff` is a short way of
+saying `jj diff -r @`.
 
 ## Modifying history
 
-Another command that accepts which revision to edit by `-r` is `desc`. You can
-change the description of our first commit to be more descriptive:
+Another command that accepts a revision by `-r` is `desc`. You can change the
+description of our first commit to be more descriptive:
 
 ```
 $ jj desc -r q -m "add a foo file that says hello"
@@ -58,7 +58,7 @@ Users coming to jj from another version control system might raise an eyebrow
 here: in jj, your commit history is generally freely editable. In case of making
 mistakes, jj has powerful undo functionality that we'll get to later. (When
 working with Git, jj has additional functionailty related to not accidentally
-rewriting commits from remote branches; we'll get to it later.)
+modifying commits you shouldn't; we'll get to it later.)
 
 ## Jumping around in history
 
@@ -75,14 +75,26 @@ now run a command like `jj st` or `jj diff`, the output is as if you were back
 at that first commit, showing that you are adding a new file. And `jj desc` will
 edit the description of this first commit.
 
-If you run `jj log` now, you might notice that our topmost commit disappeared!
-This is because the commit was empty, and `jj` abandons empty commits when you
-move away from them. You can create a new one in its place with `jj new p`,
-where `p` is the name of the commit to start from. Alternatively, if you had
-made any changes (or given a description) to your new commit, it would not have
-been abandoned.
+If you run `jj log` now, you will notice two things.
 
-### Editing history
+```
+$ jj log
+○  pwnrkwpn my@email 2025-03-18 12:53:50 08b3e414
+│  make foo say hello, world
+@  qlmqnzqo my@email 2025-03-18 12:53:50 git_head() d6b14a5d
+│  add a foo file that says hello
+◆  zzzzzzzz root() 00000000
+```
+
+First, note that `@` points at the current commit, which is no longer the top.
+
+Second, notice that the top empty commit disappeared! This is because jj
+abandons empty commits when you move away from them. You can create a new one in
+its place with `jj new p`, where `p` is the name of the commit to start from.
+Alternatively, if you had made any changes (or given a description) to your new
+commit, it would not have been abandoned.
+
+## Editing history
 
 Let's make a change to the `foo` in our initial commit -- a change that
 **doesn't** introduce a conflict, which we'll get to later. Open up `foo` in
@@ -106,7 +118,7 @@ Parent commit: zzzzzzzz 00000000 (empty) (no description set)
 ```
 
 Note the line that says "Rebased 1 descendant commits onto updated working
-copy". What happened? When you ran the jj command, jj implicitly integrated the
+copy". What happened? When you ran any jj command, jj implicitly integrated the
 file edits you have made into the current commit, and then rebased any
 downstream commits to integrate that change. Because your edit didn't conflict
 with anything that came later, everything went fine.

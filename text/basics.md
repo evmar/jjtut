@@ -130,7 +130,7 @@ In this chapter, we learned about:
 - `jj restore`: copy file contents from a change
 - `jj abandon`: abandon (delete) a change
 
-If you stopped reading here, you have all you need to productively start using
-jj for adding commits to a project. On the other hand, there's little point in
-using version control unless you make use of the history you've been
-accumulating, so in the next chapter we'll go into the history.
+If you stopped reading here, you have all you need to start using jj for adding
+commits to a project. On the other hand, there's little point in using version
+control unless you make use of the history you've been accumulating, so in the
+next chapter we'll go into the history.
