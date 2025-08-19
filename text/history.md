@@ -96,14 +96,14 @@ $ my_editor foo   # edit the file, insert a line at the top
 Save the edit, and run a command like `jj st`. You'll notice a new line in the
 output:
 
-<pre>
+```
 $ jj st
-<b>Rebased 1 descendant commits onto updated working copy</b>
+Rebased 1 descendant commits onto updated working copy
 Working copy changes:
 A foo
-Working copy : <b>q</b>lmqnzqo 763dc940 add a foo file that says hello
-Parent commit: <b>z</b>zzzzzzz 00000000 (empty) (no description set)
-</pre>
+Working copy : qlmqnzqo 763dc940 add a foo file that says hello
+Parent commit: zzzzzzzz 00000000 (empty) (no description set)
+```
 
 Note the line that says "Rebased 1 descendant commits onto updated working
 copy". What happened? When you ran the jj command, jj implicitly integrated the

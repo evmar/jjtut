@@ -5,23 +5,23 @@ commits from anywhere. Suppose we want to try out greeting someone else. Let's
 start a new change starting from our initial "hello" file and add a different
 greeting:
 
-<pre>
+```
 $ jj new q
-Working copy now at: <b>u</b>kuqsrnl 247f710f (empty) (no description set)
-Parent commit      : <b>q</b>lmqnzqo 763dc940 add a foo file that says hello
-</pre>
+Working copy now at: vukpmpko 2d92d549 (empty) (no description set)
+Parent commit      : qlmqnzqo 763dc940 add a foo file that says hello
+```
 
 Now run `jj log`:
 
-<pre>
-@  <b>v</b>ukpmpko my@email 2025-03-18 11:49:59 2d92d549
+```
+@  vukpmpko my@email 2025-03-18 11:49:59 2d92d549
 │  (empty) (no description set)
-│ ○  <b>p</b>wnrkwpn my@email 2025-03-18 11:25:43 9759c1c7
+│ ○  pwnrkwpn my@email 2025-03-18 11:25:43 9759c1c7
 ├─╯  make foo say hello, world
-○  <b>q</b>lmqnzqo my@email 2025-03-18 11:25:43 git_head() 763dc940
+○  qlmqnzqo my@email 2025-03-18 11:25:43 git_head() 763dc940
 │  add a foo file that says hello
-◆  <b>z</b>zzzzzzz root() 00000000
-</pre>
+◆  zzzzzzzz root() 00000000
+```
 
 The log now shows a branched tree. Unlike Git, jj does not have a notion of a
 "current branch" that has a single head commit. Instead, any commits you create
@@ -78,14 +78,14 @@ $ my_editor foo  # introduce conflict, and save
 
 Now run `jj` to see what happened:
 
-<pre>
+```
 $ jj
-×  <b>p</b>wnrkwpn evan.martin@gmail.com 2025-03-18 12:53:50 08b3e414 conflict
+×  pwnrkwpn evan.martin@gmail.com 2025-03-18 12:53:50 08b3e414 conflict
 │  make foo say hello, world
-@  <b>q</b>lmqnzqo evan.martin@gmail.com 2025-03-18 12:53:50 d6b14a5d
+@  qlmqnzqo evan.martin@gmail.com 2025-03-18 12:53:50 d6b14a5d
 │  add a foo file that says hello
 ◆  zzzzzzzz root() 00000000
-</pre>
+```
 
 The top commit is marked with an x, in red, and the `conflict` marker to
 indicate that this commit is now conflicting: we made a change to commit `q`
@@ -99,14 +99,14 @@ When it's time to fix the conflict, you edit that commit as you would any other,
 either with `jj edit` or `jj new`+`jj squash`. jj will warn you about the
 conflicting state:
 
-<pre>
+```
 $ jj edit p
-Working copy now at: <b>p</b>wnrkwpn 08b3e414 (conflict) make foo say hello, world
-Parent commit      : <b>q</b>lmqnzqo d6b14a5d add a foo file that says hello
+Working copy now at: pwnrkwpn 08b3e414 (conflict) make foo say hello, world
+Parent commit      : qlmqnzqo d6b14a5d add a foo file that says hello
 Added 0 files, modified 1 files, removed 0 files
 There are unresolved conflicts at these paths:
 foo    2-sided conflict
-</pre>
+```
 
 When you open the conflicting file in your editor, you will see conflict markers
 in the file. If you fix these conflicts (by editing them out), jj will notice
