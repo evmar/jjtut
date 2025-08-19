@@ -82,6 +82,10 @@ func (s *State) loadTOC() (template.HTML, error) {
 }
 
 func run() error {
+	if err := os.MkdirAll("html", 0777); err != nil {
+		return err
+	}
+
 	page, err := os.ReadFile("book/page.gotmpl")
 	if err != nil {
 		return err
