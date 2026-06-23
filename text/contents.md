@@ -4,5 +4,6 @@
 1. [Setup](setup.html)
 1. [Basics](basics.html)
 1. [History](history.html)
+1. [Editing commits](editing-commits.html)
 1. [Editing history](editing-history.html)
 1. [More history](more-history.html)

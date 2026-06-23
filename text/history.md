@@ -61,4 +61,4 @@ In this chapter, we learned:
 
 ## Next step
 
-[Learn about editing history](editing-history.html).
+[Learn about editing commits](editing-commits.html).
