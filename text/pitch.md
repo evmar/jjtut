@@ -75,3 +75,7 @@ move code around.
 Finally, jj also exposes some workflows that will be new even to Git experts.
 For example, the "megamerge" is a way of working on multiple branches at the
 same time, letting you test how multiple in-progress changes work together.
+
+## Next step
+
+[Read about the big picture](intro.md).

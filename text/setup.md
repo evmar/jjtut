@@ -1,4 +1,4 @@
-# Getting Started
+# Setup
 
 ## jj setup
 
@@ -54,3 +54,7 @@ $ jj git clone --colocate <someurl>
 
 This tutorial assumes you're starting with a fresh repository, but it will be
 almost the same if you clone an existing repository instead.
+
+## Next step
+
+[Start learning the basics](basics.html).

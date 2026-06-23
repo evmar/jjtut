@@ -1,12 +1,18 @@
 # Jujutsu Tutorial
 
-Jujutsu ("jj") is a version control system that is both simple and powerful.
+[Jujutsu](https://www.jj-vcs.dev/) (from here on, "jj") is a version control
+system that is both simple and powerful. This site is a tutorial will help you
+learn to use jj.
 
-This document is a tutorial aimed at helping you, a jj-curious person,
-understand and adopt jj. Why bother? Start by reading
-[the Jujutsu sales pitch](pitch.html).
+Why bother? Read [my Jujutsu sales pitch](pitch.html).
 
-> If this tutorial doesn't work out for you, try another! There is
-> [one included in the Jujutsu docs](https://jj-vcs.github.io/jj/latest/tutorial/)
-> and also
-> [Steve's Jujutsu tutorial](https://steveklabnik.github.io/jujutsu-tutorial/).
+Ready to learn? [Start the tutorial](intro.html).
+
+## Alternatives
+
+If this tutorial doesn't work out for you, try another:
+
+- [Steve's Jujutsu tutorial](https://steveklabnik.github.io/jujutsu-tutorial/)
+  is the most recommended entry point, and is more conversational than this.
+- The [Jujutsu documentation](https://www.jj-vcs.dev/latest/) has a tutorial,
+  which is heavier on the details right from the start.

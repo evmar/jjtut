@@ -1,8 +1,11 @@
 # Introduction
 
-jj stores your data in a Git repository. This means using jj you can still
-collaborate using existing Git tooling. jj's underlying model of how your
-history is tracked is more or less the same as Git, with branches and commits.
+jj stores your data in a Git repository. jj's underlying model of how your
+history is tracked is more or less the same as Git, with branches and commits,
+and when using it you still interoperate with Git hosting.
+
+jj differs from Git in its improved user interface and the way it represents
+history.
 
 ## The central idea
 
@@ -13,16 +16,16 @@ What does it mean? Version control systems store commits. In most, you "check
 out" some version of the code, edit some files, then run commands to push those
 edits back in.
 
-In jj, you instead are always (conceptually) **directly editing** a current
-commit; the commit and the files you are working with are kept in sync. Editing
+In jj, you instead are always (conceptually) _directly editing the current
+commit_; the commit and the files you are working with are kept in sync. Editing
 a file means implicitly updating the current commit with the new file's
 contents.
 
-<details>
-<summary>How can that actually work?</summary>
-It's an implementation detail, but in practice whenever you run a jj
-command it updates its state to make the above stay true.
-</details>
+(An aside: how can that actually work? It's an implementation detail, but in
+practice whenever you run a jj command it updates its state to make the above
+stay true.)
+
+## Consequences
 
 This idea might seem small but it has far-reaching consequences.
 
@@ -32,7 +35,7 @@ description on your new commit before finishing it. If you need to switch to
 working on something else, your work is already saved. (You no longer need Git's
 "stash" tool.)
 
-For another example, if you need to fix a typo in an old commit, you can jump
+For another example, if you need to fix a typo in an old commit, you can switch
 directly to it and just make the edits. (This replaces many `git rebase -i`
 workflows.) Changing the description of an old commit is the same command as
 changing the description of the newest one.
@@ -45,3 +48,7 @@ Finally, jj records a log of every operation on the respository to provide
 pervasive undo. Because working copy state is always mirrored into the
 repository, this covers all the above operations. (Like an enhanced
 `git reflog`.)
+
+## Next step
+
+[Start by setting things up](setup.html).
