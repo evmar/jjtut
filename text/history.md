@@ -22,7 +22,8 @@ From the top:
 
 In a terminal, these commits will have some prefix (often the initial letter)
 highlighted or in bold. This indicates the unique prefix of the commit that can
-be used to refer to it in commands. jj commands accept either jj or Git commit IDs.
+be used to refer to it in commands. jj commands accept either jj or Git commit
+IDs.
 
 ## Diffs and revsets
 
@@ -39,8 +40,8 @@ $ jj diff -r q
 
 The argument passed to `-r` is called a _revset_, and in jj it is a miniature
 [programming language for specifying commits](https://jj-vcs.github.io/jj/latest/revsets/).
-The `root()` shown in the above output is a function in that language that
-gets the repository's root commit.
+The `root()` shown in the above output is a function in that language that gets
+the repository's root commit.
 
 In practice, almost all you need to know is that the alias "`@`" refers to the
 current commit, and the operator "`-`" means "the commit before". So the revset

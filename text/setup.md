@@ -36,8 +36,9 @@ work with.
 
 jj atop Git can work in two modes: the default, where the Git parts are kept
 hidden within the `.jj` directory, or _colocated_, where your directory is both
-a Git and jj repository. The latter is better for now because it means Git
-commands will continue to work.
+a Git and jj repository. The latter is better because it means Git commands will
+continue to work, and editors that render Git status will understand your jj
+changes too.
 
 To create a new colocated repository, create a new directory (or go to an
 existing directory already managed by Git) and:

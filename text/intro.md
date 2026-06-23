@@ -32,13 +32,13 @@ This idea might seem small but it has far-reaching consequences.
 To start with, when you make a new change you start with a new empty commit and
 then edit files, modifying the commit. This means you can also edit the
 description on your new commit before finishing it. If you need to switch to
-working on something else, your work is already saved. (You no longer need Git's
+working on something else, your work is already saved. (This replaces Git's
 "stash" tool.)
 
 For another example, if you need to fix a typo in an old commit, you can switch
 directly to it and just make the edits. (This replaces many `git rebase -i`
 workflows.) Changing the description of an old commit is the same command as
-changing the description of the newest one.
+changing the description of the newest one. (This replaces `commit --amend`.)
 
 This approach has further implications on how merge/rebase conflicts work. There
 is no "rebase in progress" state or commands like `git rebase --continue`.

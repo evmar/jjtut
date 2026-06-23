@@ -36,12 +36,11 @@ together.
 
 Here are a few of my favorite features of jj:
 
-- Making a fix-up to some earlier change is an easy and trivial workflow. (No
-  `git rebase -i` shuffling.)
+- Making a fix-up to some earlier change is an easy and trivial workflow.
 
-- Similarly, If you're halfway through some change and realize there's something
-  else you needed to do first, it's easy to start a new change before the
-  current one and then pick up where you left off. (No more `git stash`.)
+- If you're halfway through some change and realize there's something else you
+  needed to do first, it's easy to start a new change before the current one and
+  then pick up where you left off.
 
 - You can write the description of a change before you start working on it. (You
   can also describe it after, like in traditional version control.)
@@ -60,10 +59,10 @@ features compose.
 
 ## Coming from Git
 
-As a Git expert I was already comfortable using tools like `git rebase -i` to
-move fixups around. What I found adopting jj is that while it was always
-possible to make Git do what I wanted it to do, with jj I can do the same things
-more easily and quickly.
+As a Git expert I was already comfortable using tools like `git stash` and
+`git rebase -i` to move code around. What I found after adopting jj is that
+while it was always possible to make Git do what I wanted it to do, with jj I
+can do the same things more easily and quickly.
 
 Common tasks like "while writing this change I realized there's a change I ought
 to do first" are possible with Git but trivial with jj. As a developer I've
@@ -78,4 +77,4 @@ same time, letting you test how multiple in-progress changes work together.
 
 ## Next step
 
-[Read about the big picture](intro.md).
+[Read about the big picture](intro.html).
