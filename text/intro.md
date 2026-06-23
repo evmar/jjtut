@@ -1,19 +1,8 @@
 # Introduction
 
-Jujutsu ("jj") is a version control system that is both simple and powerful.
-
 jj stores your data in a Git repository. This means using jj you can still
 collaborate using existing Git tooling. jj's underlying model of how your
 history is tracked is more or less the same as Git, with branches and commits.
-
-jj distills Git's clunky user interface into a smaller set of orthogonal
-commands, while still providing the same functionality of many Git workflows. jj
-simplifies Git not by hiding complexity, but by using a better conceptual model.
-
-> If this tutorial doesn't work out for you, try another! There is
-> [one included in the Jujutsu docs](https://jj-vcs.github.io/jj/latest/tutorial/)
-> and also
-> [Steve's Jujutsu tutorial](https://steveklabnik.github.io/jujutsu-tutorial/).
 
 ## The central idea
 

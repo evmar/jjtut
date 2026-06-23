@@ -1,3 +1,4 @@
+1. [Sales pitch](pitch.html)
 1. [Introduction](intro.html)
 1. [Getting started](getting-started.html)
 1. [Basics](basics.html)
