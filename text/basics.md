@@ -69,7 +69,8 @@ making any file edits.
 
 ## Second change
 
-To start a new change, use `jj new`.
+To start a new change, use `jj new`, which creates a new commit as a child of
+the current commit.
 
 ```
 $ jj new
@@ -77,13 +78,15 @@ Working copy now at: pwnrkwpn ac9121f7 (empty) (no description set)
 Parent commit      : qlmqnzqo b2fa5372 add the foo file
 ```
 
-We now are editing a new commit `p`, and can do the same commands with it as the
-first commit.
+We now are editing a new commit and can do the same edits with it as the first
+commit.
 
 > [!WARNING]
 > As you get started with jj, forgetting to start new commits before editing
 > files will likely be the most common mistake you make. It will feel unnatural
 > at first but will get easier.
+
+## jj commit
 
 As a helpful alias, the command `jj commit` combines running `jj desc` followed
 by `jj new`. It's useful if you haven't given your commit a description already.
@@ -98,39 +101,20 @@ Working copy now at: nnlkypwz f58d0c2c (empty) (no description set)
 Parent commit      : pwnrkwpn 3d263ba5 make foo say hello, world
 ```
 
-## Abandoning a change
-
-Suppose next you accidentally clobbered your important work:
-
-```
-$ rm foo   # or edited it, etc.
-```
-
-There are two ways to undo this, with two different ways of thinking about it.
-
-One is `jj restore`, which copies file contents from a different commit. With no
-arguments it copies all files from the previous commit, emptying the current
-commit of any file changes, effectively clobbering any changes you've made. This
-preserves the current commit's description and change ID.
-
-The other option is `jj abandon`, which throws away the current commit. jj will
-recreate a new empty commit in its place, with a new change ID.
-
-If you did try making a change here, undo it using one of the above commands to
-prepare for the next chapter.
-
-### Review
+## Review
 
 In this chapter, we learned about:
 
 - `jj status` (`jj st`): show status (files included, etc.) of a change
 - `jj diff`: show diff of a change
 - `jj desc`: edit description of a change
-- `jj new`, `jj commit`: create a new change
-- `jj restore`: copy file contents from a change
-- `jj abandon`: abandon (delete) a change
+- `jj new` and `jj commit`: create a new change
+
+## Next step
 
 If you stopped reading here, you have all you need to start using jj for adding
-commits to a project. On the other hand, there's little point in using version
-control unless you make use of the history you've been accumulating, so in the
-next chapter we'll go into the history.
+commits to a project.
+
+On the other hand, there's little point in using version control unless you make
+use of the history you've been accumulating, so in the next chapter we'll
+[go into the history](history.html).
