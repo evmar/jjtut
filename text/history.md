@@ -31,7 +31,8 @@ We've used `jj diff` to see the diff of the current change. `diff` (and many
 other jj commands) can also be told which change to work with by using the `-r`
 flag.
 
-Here, I use `q` as the unique prefix of the commit above:
+Here, I use `q` as the unique prefix of my first commit (use your own in place
+of `q`):
 
 ```
 $ jj diff -r q

@@ -63,15 +63,17 @@ if you were back at that old commit, showing that you are adding a new file.
 
 ## In-place changes
 
-Once you've switched to an old commit, you edit it using the same tools as before.
+Once you've switched to an old commit, you edit it using the same tools as
+before.
 
-`jj desc` will still modify the current commit's description. This will
-cause a rebase just as above.
+`jj desc` will still modify the current commit's description. This will cause a
+rebase just as above.
 
-And if you edit a file, it will update the file in the current commit. (If you try
-this, be careful to only insert a line at the top, to not cause a conflict --
-we'll get to those later.) The next time you run a `jj` command you will also
-see it rebase.
+And if you edit a file, it will update the file in the current commit. (If you
+try this, be careful to only insert a line at the top, to not cause a conflict
+-- we'll get to those later.) The next time you run any `jj` command you will
+also see it rebase as it automatically resynchronizes the commit with your
+working copy.
 
 ## Empty commits and jumping back
 
@@ -93,5 +95,5 @@ description) to your new commit, it would not have been abandoned.
 
 ## Next step
 
-We've modified commits in place, but in jj it's also just as easy to modify
-the sequence of commits.  XXX [editing history](editing-history.html).
+We've modified commits in place, but in jj it's also just as easy to
+[modify the sequence of commits](editing-history.html).
