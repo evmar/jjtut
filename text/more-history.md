@@ -14,11 +14,11 @@ Parent commit      : qlmqnzqo 763dc940 add a foo file that says hello
 Now run `jj log`:
 
 ```
-@  vukpmpko my@email 2025-03-18 11:49:59 2d92d549
+@  vukpmpko my@email 2d92d549
 │  (empty) (no description set)
-│ ○  pwnrkwpn my@email 2025-03-18 11:25:43 9759c1c7
+│ ○  pwnrkwpn my@email 9759c1c7
 ├─╯  make foo say hello, world
-○  qlmqnzqo my@email 2025-03-18 11:25:43 git_head() 763dc940
+○  qlmqnzqo my@email 763dc940
 │  add a foo file that says hello
 ◆  zzzzzzzz root() 00000000
 ```
@@ -80,9 +80,9 @@ Now run `jj` to see what happened:
 
 ```
 $ jj
-×  pwnrkwpn evan.martin@gmail.com 2025-03-18 12:53:50 08b3e414 conflict
+×  pwnrkwpn evan.martin@gmail.com 08b3e414 conflict
 │  make foo say hello, world
-@  qlmqnzqo evan.martin@gmail.com 2025-03-18 12:53:50 d6b14a5d
+@  qlmqnzqo evan.martin@gmail.com d6b14a5d
 │  add a foo file that says hello
 ◆  zzzzzzzz root() 00000000
 ```

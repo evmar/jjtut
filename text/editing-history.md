@@ -1,5 +1,38 @@
 # Editing history
 
+## Modifying history
+
+Another command that accepts a revision by `-r` is `desc`. You can change the
+description of our first commit to be more descriptive:
+
+```
+$ jj desc -r q -m "add a foo file that says hello"
+```
+
+Like `diff`, you can now see that `jj desc` without flags edits `@`.
+
+Users coming to jj from another version control system might be surprised here:
+in jj, your commit history is generally freely editable.
+
+In case of making mistakes, jj has powerful undo functionality. And when working
+with Git, jj has additional functionality related to not accidentally modifying
+commits you shouldn't. We'll get to both of these later.
+
+## Rebasing
+
+After making the above modification to history, you'll notice a new line in the
+output:
+
+```
+$ jj desc [...as above...]
+Rebased 2 descendant commits
+[...]
+```
+
+What happened? Whenever you modify history, jj updates downstream commits atop
+that change. In Git terms this is a "rebase", but in jj these happen implicitly
+and frequently.
+
 ## Jumping around
 
 You can change which commit you're currently editing with `jj edit`. Switch back
@@ -22,7 +55,7 @@ If you run `jj log` now, you will notice two things.
 $ jj log
 ○  pwnrkwpn my@email 08b3e414
 │  make foo say hello, world
-@  qlmqnzqo my@email git_head() d6b14a5d
+@  qlmqnzqo my@email d6b14a5d
 │  add a foo file that says hello
 ◆  zzzzzzzz root() 00000000
 ```
@@ -73,7 +106,8 @@ Like other jj commands, `jj abandon` accepts `-r` to abandon an arbitrary
 historical commit.
 
 ## Review
-
+- history is mutable
+- editing history causes downstream changes to update
 - `jj edit`: jump to a specific change and begin editing it
 - `jj new`: accepts an argument for which commit to start from
 - moving away from empty commits causes them to be automatically abandoned

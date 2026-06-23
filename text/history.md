@@ -8,7 +8,7 @@ just to reduce visual noise.)
 │  (empty) (no description set)
 ○  pwnrkwpn my@email 08b3e414
 │  make foo say hello, world
-○  qlmqnzqo my@email git_head() d6b14a5d
+○  qlmqnzqo my@email d6b14a5d
 │  add the foo file
 ◆  zzzzzzzz root() 00000000
 ```
@@ -22,7 +22,7 @@ From the top:
 
 In a terminal, these commits will have some prefix (often the initial letter)
 highlighted or in bold. This indicates the unique prefix of the commit that can
-be used to refer to it in commands. jj accepts either jj or Git commit IDs.
+be used to refer to it in commands. jj commands accept either jj or Git commit IDs.
 
 ## Diffs and revsets
 
@@ -39,57 +39,24 @@ $ jj diff -r q
 
 The argument passed to `-r` is called a _revset_, and in jj it is a miniature
 [programming language for specifying commits](https://jj-vcs.github.io/jj/latest/revsets/).
+The `root()` shown in the above output is a function in that language that
+gets the repository's root commit.
 
 In practice, almost all you need to know is that the alias "`@`" refers to the
 current commit, and the operator "`-`" means "the commit before". So the revset
-"`@-`" means "the commit before the current one". You can see both of these in
-the `jj status` output.
+"`@-`" means "the commit before the current one", while `p-` means "the commit
+before commit `p`". You have seen `@` and `@-` in the `jj status` output.
 
 Putting it all together, you can now understand that `jj diff` is a short way of
 saying `jj diff -r @`. (This is quite different from Git, with its flags for
 diffs involving the working copy or the index!)
 
-## Modifying history
-
-Another command that accepts a revision by `-r` is `desc`. You can change the
-description of our first commit to be more descriptive:
-
-```
-$ jj desc -r q -m "add a foo file that says hello"
-```
-
-Like `diff`, you can now see that `jj desc` without flags edits `@`.
-
-Users coming to jj from another version control system might be surprised here:
-in jj, your commit history is generally freely editable.
-
-In case of making mistakes, jj has powerful undo functionality. And when working
-with Git, jj has additional functionality related to not accidentally modifying
-commits you shouldn't. We'll get to both of these later.
-
-## Rebasing
-
-After making the above modification to history, you'll notice a new line in the
-output:
-
-```
-$ jj desc [...as above...]
-Rebased 2 descendant commits
-[...]
-```
-
-What happened? Whenever you modify history, jj updates downstream commits atop
-that change. In Git terms this is a "rebase", but in jj these happen implicitly
-and frequently.
-
 ## Review
 
 In this chapter, we learned:
 
-- specify revisions using the `-r` flag to `diff` and `desc`
+- specify revisions using the `-r` flag to `diff`
 - there exists a 'revset' language for specifying revisions
-- history is mutable
-- editing history causes downstream changes to update
 
 ## Next step
 
