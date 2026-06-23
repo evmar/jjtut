@@ -31,6 +31,8 @@ main {
 pre,
 code {
     font-family: WebKitWorkaround, monospace;
+    font-size: 0.9em;
+    background: hsl(0, 0%, 95%);
 }
 
 pre {
