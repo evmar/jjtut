@@ -14,7 +14,7 @@ To start with, it's easy to try out and you have little to lose.
 
 jj stores its data in Git and can be thought of as a different user interface
 for Git, so you still can use Git tools like GitHub as before. If you try jj and
-don't like it, abandoning it is about as simple as `rm -rf .jj` and switching
+don't like it, abandoning it is almost as simple as `rm -rf .jj` and switching
 back to Git commands in your same checkout.
 
 ## Simple but powerful
@@ -63,13 +63,13 @@ features compose.
 
 As a Git expert I was already comfortable using tools like `git stash` and
 `git rebase -i` to move code around. What I found after adopting jj is that
-while I always _could_ make Git do what I wanted it to do, with jj I
-can do the same things more easily and quickly.
+while I always _could_ make Git do what I wanted it to do, with jj I can do the
+same things more easily and quickly.
 
-Common tasks "while writing this change I realized there's a change I ought
-to do first" are possible with Git but trivial with jj. As a developer I've
-found it's made me more confident in how I experiment, because it's so easy to
-move code around.
+Common tasks "while writing this change I realized there's a change I ought to
+do first" are possible with Git but trivial with jj. As a developer I've found
+it's made me more confident in how I experiment, because it's so easy to move
+code around.
 
 ## Beyond Git
 

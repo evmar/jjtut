@@ -78,8 +78,8 @@ your working copy.
 ## Empty commits and jumping back
 
 A second thing to notice about the `jj log` output above is that the top empty
-commit disappeared. This is because jj abandons empty commits when you move away
-from them.
+commit disappeared when we switched away from it. This is because jj abandons
+empty commits when you move away from them.
 
 You can start a new commit at the top with `jj new p`, where `p` is the name of
 the commit to start from. (You can now see that `jj new` both creates the new
@@ -110,7 +110,6 @@ In this chapter, we learned:
 - history is mutable
 - editing history causes downstream changes to update
 - `jj edit`: jump to a specific change and begin editing it
-- there is no `git stash` equivalent because work is always already saved
 - `jj new`: accepts an argument for which commit to start from
 - moving away from empty commits causes them to be automatically abandoned
 - `-r` specifies a single revision to work on, while `-f`/`-t` specify two ends

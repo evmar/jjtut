@@ -1,4 +1,4 @@
-# Jujutsu Tutorial
+# Evan's Jujutsu Tutorial
 
 [Jujutsu](https://www.jj-vcs.dev/) (from here on, "jj") is a version control
 system that is both simple and powerful. This site is a tutorial will help you
