@@ -14,3 +14,5 @@
 - Part 3: Recipes
   - [Recipes]({{.Root}}recipes/recipes.html)
   - [jj squash]({{.Root}}recipes/squash.html)
+- Part 4: Git
+  - [Working with Git]({{.Root}}git/)
