@@ -8,16 +8,16 @@ $ jj desc -r q -m "add a foo file that says hello"
 ```
 
 Like with `jj diff`, you can now see that running `jj desc` without flags edits
-`@`, but both can be pointed at any commit.
+`@`, but many jj commands can be pointed at any commit.
 
 Users coming to jj from another version control system might be surprised (or
 alarmed!) here by how making new changes and modifying history are the same
 commands, just pointed at different places. In jj, your commit history is
-generally freely editable and feels pretty similar to editing the newest change.
+generally freely editable and editing old commits feels similar to editing the newest one.
 
 Recall that `jj undo` helps if you make any mistakes. And when working with Git,
 jj has additional functionality related to not accidentally modifying commits
-you shouldn't. We'll get to that later.
+you shouldn't, like those from upstream. We'll get to that later.
 
 ## Rebasing
 
@@ -71,7 +71,7 @@ rebase just as above.
 
 If you edit a file on disk, it will update the file in the current commit. (If
 you try this, be careful to only insert a line at the top, to not cause a
-conflict -- we'll get to those later.) The next time you run any `jj` command
+conflict -- we'll get to those next.) The next time you run any `jj` command
 you will also see it rebase as it automatically resynchronizes the commit with
 your working copy.
 
@@ -85,12 +85,12 @@ You can start a new commit at the top with `jj new p`, where `p` is the name of
 the commit to start from. (You can now see that `jj new` both creates the new
 commit and switches to it as `jj edit` does.) Alternatively, if you had made any
 changes (or given a description) to your new commit, it would not have been
-abandoned.
+abandoned, and you could return to working on it with `jj edit`.
 
 ## Specifying revisions
 
 Almost of the commands we've discussed so far, including `diff`, `desc`,
-`squash`, and `abandon`, apply to the current commit by default, but also accept
+`squash`, and `abandon`, apply to the current commit by default but also accept
 the `-r` (`--revision`) flag to specify which commit to affect. This means, for
 example, you can abandon a commit without switching to it first.
 

@@ -36,8 +36,8 @@ $ jj log
 ◆  zzzzzzzz root() 00000000
 ```
 
-I first make a new change at the first point I want to fix, the commit named
-`x`, and repair it. I can run `jj diff` as I go to see what I changed.
+I first make a new change at the first point I want to fix (the commit named
+`x`) and repair it. I can run `jj diff` as I go to see what I changed.
 
 ```
 $ jj new x
@@ -54,7 +54,7 @@ $ jj log
 ◆  zzzzzzzz root() 00000000
 ```
 
-Finally, I can `jj squash` my resovled conflict, and abandon this now empty
+Once I'm ready, I can `jj squash` my fixup commit, and abandon this now empty
 change `y`.
 
 ## The squash workflow

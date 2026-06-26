@@ -11,7 +11,7 @@ changes you've made. This preserves the current commit's description and change
 ID.
 
 ```
-$ rm important-file
+$ rm foo
 [... whoops, didn't mean to do that!]
 $ jj restore
 Working copy  (@) now at: vwvywzku (empty) (no description set)
@@ -28,7 +28,7 @@ commit, jj will recreate a new empty commit in its place, with a new change ID
 and empty description.
 
 ```
-$ echo "rewrite from scratch" > README.md
+$ echo "rewrite from scratch" > foo
 $ jj desc -m "a bold new plan"
 [... wait a sec, that was a bad idea!]
 $ jj abandon
