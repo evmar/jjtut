@@ -113,8 +113,5 @@ In this chapter, we learned about:
 ## Next step
 
 If you stopped reading here, you have all you need to start using jj for adding
-commits to a project.
-
-On the other hand, there's little point in using version control unless you make
-use of the history you've been accumulating, so in the next chapter we'll
-[go into the history](history.html).
+commits to a project. The next most important thing to learn is
+[how to fix mistakes](fixing.html).
