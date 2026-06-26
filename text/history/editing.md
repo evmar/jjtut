@@ -75,26 +75,6 @@ conflict -- we'll get to those later.) The next time you run any `jj` command
 you will also see it rebase as it automatically resynchronizes the commit with
 your working copy.
 
-## Recipe: pausing work in progress
-
-Suppose you're working on a new change and notice you made some typo in an
-earlier commit. In Git, you might use `git stash` to save your current work to
-go make that fix.
-
-In jj, because your work is already saved in the current commit, there is no
-need to explicitly stash. (If you want to put a note on the current commit
-before moving away from it, you can use `jj desc`.)
-
-Instead, you can immediately jump to that commit, make the fix, and jump back:
-
-```
-$ jj log
-[... spot the name of the commit that had the typo ...]
-$ jj edit that-commit
-$ edit the file
-$ jj edit commit-i-was-on-before
-```
-
 ## Empty commits and jumping back
 
 A second thing to notice about the `jj log` output above is that the top empty

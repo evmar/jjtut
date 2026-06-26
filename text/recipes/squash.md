@@ -15,20 +15,6 @@ might recognize the "squash" terminology from `git rebase -i`.) After running
 `jj squash`, you're left pointed at an empty commit; if you go elsewhere with
 `jj edit`, it will be automatically abandoned.
 
-## Recipe: jj squash and the Git index
-
-Advanced Git users might be accustomed to building up a single change by
-incrementally adding parts of it to the index, which in Git can be thought of as
-a staging area for a pending change.
-
-jj models the workflow of building up a change by using regular commits.
-
-1. Start a new staging commit on top of your current one (run `jj new`).
-1. Edit files as needed; whenever you're happy with them, `jj squash` them into
-   the previous commit, or use `jj restore` to undo them.
-1. Repeat that step as many times as necessary.
-1. Use `jj abandon`, if needed, to abandon the staging commit.
-
 ## The squash workflow
 
 Because it's free to make new commits anywhere, one way to use jj is to _always_

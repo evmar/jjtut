@@ -11,5 +11,6 @@ TODO
 - stash-like changes
 - create commits before/after point
 
+- [Pausing work](pause.html): what to do instead of `git stash`
 - [Staging commits](staging.html): 
 - [The squash workflow](squash.html): why you might want to always use `jj squash` instead of directly editing commits

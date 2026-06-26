@@ -12,7 +12,9 @@
   - [Conflicts]({{.Root}}history/conflicts.html)
   - [Nonlinear history]({{.Root}}history/nonlinear.html)
 - Part 3: Recipes
-  - [Recipes]({{.Root}}recipes/recipes.html)
+  - [Recipes]({{.Root}}recipes/)
+  - [Pausing work in progress]({{.Root}}recipes/pause.html)
+  - [Staging]({{.Root}}recipes/staging.html)
   - [jj squash]({{.Root}}recipes/squash.html)
 - Part 4: Git
   - [Working with Git]({{.Root}}git/)
