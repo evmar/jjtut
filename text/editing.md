@@ -107,6 +107,22 @@ commit and switches to it as `jj edit` does.) Alternatively, if you had made any
 changes (or given a description) to your new commit, it would not have been
 abandoned.
 
+## Specifying revisions
+
+Almost of the commands we've discussed so far, including `diff`, `desc`,
+`squash`, and `abandon`, apply to the current commit by default, but also accept
+the `-r` (`--revision`) flag to specify which commit to affect. This means, for
+example, you can abandon a commit without switching to it first.
+
+Some of these operations (including `diff`, `restore`, `squash`) conceptually
+work with a commit and its parent. For those, the commands also let you specify
+both ends, with the `-f` (`--from`) and `-t` (`--to`) flags. So, for example,
+you can diff two arbitrary commits, and you can also squash the contents of one
+commit into another one, not just its parent.
+
+It's worth highlighting these flags because they are used in jj consistently
+across different commands.
+
 ## Review
 
 In this chapter, we learned:
@@ -117,6 +133,7 @@ In this chapter, we learned:
 - there is no `git stash` equivalent because work is always already saved
 - `jj new`: accepts an argument for which commit to start from
 - moving away from empty commits causes them to be automatically abandoned
+- `-r` specifies a single revision to work on, while `-f`/`-t` specify two ends
 
 ## Next step
 
