@@ -7,7 +7,8 @@ with jj to give you a better picture of how the tools work together.
 - [Pausing work](pause): what to do instead of `git stash`
 - [Inserting](insert): what to do when working on a change and you notice some
   small thing you should have done before
-- [Staging commits](staging): what do instead of using the Git index
+- [Staging commits](staging): what do instead if you are accustomed to using the
+  Git index
 - [The squash workflow](squash): why you might want to always use `jj squash`
   instead of directly editing commits
 
