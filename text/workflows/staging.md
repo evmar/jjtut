@@ -1,4 +1,4 @@
-# Recipe: staging and the Git index
+# Workflow: staging and the Git index
 
 Advanced Git users might be accustomed to building up a single change by
 incrementally adding parts of it to the index, which in Git can be thought of as
@@ -11,3 +11,9 @@ jj models the workflow of building up a change by using regular commits.
    the previous commit, or use `jj restore` to undo them.
 1. Repeat that step as many times as necessary.
 1. Use `jj abandon`, if needed, to abandon the staging commit.
+
+What if you've already made the commit and want to split it up? Use the
+[insert](insert.html) workflow to insert an empty commit before the current one,
+then follow the same steps.
+
+[Back to the workflow list](./).
