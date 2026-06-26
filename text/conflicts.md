@@ -2,7 +2,7 @@
 
 We now have the tools and understanding necessary to understand conflicts.
 
-Let's modify your first change in such a way that another change will conflict
+Let's modify your first change in such a way that a later change will conflict
 with it. For example, change "hello" to "goodbye".
 
 ```

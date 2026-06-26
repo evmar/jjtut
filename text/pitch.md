@@ -5,7 +5,7 @@ answer is yes. Certainly it was for me and many other fans of this tool! I adopt
 new tools rarely and evangelize them even less often, but jj has been my
 favorite of the last few years.
 
-In this document I try to give the high-level sales pitch for why jj is worth
+In this chapter I try to give the high-level sales pitch for why jj is worth
 your time.
 
 ## Interoperation and risk
