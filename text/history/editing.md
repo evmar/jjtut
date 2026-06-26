@@ -13,7 +13,8 @@ Like with `jj diff`, you can now see that running `jj desc` without flags edits
 Users coming to jj from another version control system might be surprised (or
 alarmed!) here by how making new changes and modifying history are the same
 commands, just pointed at different places. In jj, your commit history is
-generally freely editable and editing old commits feels similar to editing the newest one.
+generally freely editable and editing old commits feels similar to editing the
+newest one.
 
 Recall that `jj undo` helps if you make any mistakes. And when working with Git,
 jj has additional functionality related to not accidentally modifying commits
@@ -71,9 +72,9 @@ rebase just as above.
 
 If you edit a file on disk, it will update the file in the current commit. (If
 you try this, be careful to only insert a line at the top, to not cause a
-conflict -- we'll get to those next.) The next time you run any `jj` command
-you will also see it rebase as it automatically resynchronizes the commit with
-your working copy.
+conflict -- we'll get to those next.) The next time you run any `jj` command you
+will also see it rebase as it automatically resynchronizes the commit with your
+working copy.
 
 ## Empty commits and jumping back
 

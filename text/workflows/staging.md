@@ -13,7 +13,7 @@ jj models the workflow of building up a change by using regular commits.
 1. Use `jj abandon`, if needed, to abandon the staging commit.
 
 What if you've already made the commit and want to split it up? Use the
-[insert](../insert) workflow to insert an empty commit before the current one, then
-follow the same steps.
+[insert](../insert) workflow to insert an empty commit before the current one,
+then follow the same steps.
 
 [Back to the workflow list](../).
