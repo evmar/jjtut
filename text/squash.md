@@ -1,9 +1,9 @@
 # jj squash
 
-When you want to make a quick fix in a commit, using `jj edit` to jump directly to it
-and editing the file directly is the quickest way. But if you make a mistake
-(cat on the keyboard?) there isn't a way to diff or undo your new edits as
-distinct from the existing edits.
+When you want to make a quick fix in a commit, using `jj edit` to jump directly
+to it and editing the file directly is the quickest way. But if you make a
+mistake (cat on the keyboard?) there isn't a way to diff or undo your new edits
+as distinct from the existing edits.
 
 An alternative workflow is instead to create a new commit before editing, like
 we just did in the previous section. After editing files, you run `jj diff` to
@@ -17,18 +17,14 @@ might recognize the "squash" terminology from `git rebase -i`.) After running
 
 ## The squash workflow
 
-Because it's free to make new commits anywhere, one way to use jj is to _always_ use `jj new` when editing history. That is, if you want
-to make a change to some commit X, you instead say `jj new X` to start a new
-commit based on X, and then `jj squash` when you're done with your edits.  This
-allows you to leave X in its original statecontained and what new changes you've
-made atop X.
+Because it's free to make new commits anywhere, one way to use jj is to _always_
+use `jj new` when editing history. That is, if you want to make a change to some
+commit X, you instead say `jj new X` to start a new commit based on X, and then
+`jj squash` when you're done with your edits. This allows you to leave X in its
+original statecontained and what new changes you've made atop X.
 
-
-When
-you move elsewhere (via `jj new` or `jj edit`) the empty temporary commit you've
-been using on will be automatically cleaned up.
-
-
+When you move elsewhere (via `jj new` or `jj edit`) the empty temporary commit
+you've been using on will be automatically cleaned up.
 
 ## squash and the Git index
 

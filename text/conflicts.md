@@ -3,7 +3,7 @@
 We now have the understanding necessary to understand conflicts.
 
 Modify your first change (using either `jj edit` or `jj new`+`jj squash`) in
-such a way that the other change will conflict wi  th it. For example, change
+such a way that the other change will conflict with it. For example, change
 "hello" to "goodbye".
 
 ```

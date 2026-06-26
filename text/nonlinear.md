@@ -27,8 +27,9 @@ The log now shows a branched tree.
 
 ## Branches
 
-Unlike Git, jj does not have a notion of a
-"current branch". Instead, any commits you create
-are saved, and you can jump between them with `jj edit` as you desire.
+Unlike Git, jj does not have a notion of a "current branch". Instead, any
+commits you create are saved, and you can jump between them with `jj edit` as
+you desire.
 
-When you work with external Git repositories that contain Git branches, they show up in jj
+When you work with external Git repositories that contain Git branches, they
+show up in jj

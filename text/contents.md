@@ -5,6 +5,7 @@
   - [Introduction](intro.html)
   - [Setup](setup.html)
   - [Basics](basics.html)
+  - [Fixing mistakes](fixing.html)
 - Part 2: History
   - [History](history.html)
   - [Editing commits](editing.html)

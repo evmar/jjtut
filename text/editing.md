@@ -95,6 +95,6 @@ description) to your new commit, it would not have been abandoned.
 
 ## Next step
 
-We've modified commits in place, but in jj it's also easy to move
-code between them, which is especially important when carefully making changes to history.
+We've modified commits in place, but in jj it's also easy to move code between
+them, which is especially important when carefully making changes to history.
 [Read next about jj squash](squash.html).
