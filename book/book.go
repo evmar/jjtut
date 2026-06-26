@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"html/template"
 	"io/fs"
@@ -24,6 +25,17 @@ func (s *State) render(path string) error {
 	if err != nil {
 		return err
 	}
+
+	firstLine, _, _ := bytes.Cut(md, []byte("\n"))
+	title, found := strings.CutPrefix(string(firstLine), "# ")
+	if !found {
+		return fmt.Errorf("expected first line to contain title")
+	}
+	subtitle := "Evan's Jujutsu Tutorial"
+	if title != subtitle {
+		title = title + " — " + subtitle
+	}
+
 	extensions := parser.FencedCode | parser.BackslashLineBreak
 	options := html.RendererOptions{
 		Flags: html.FlagsNone,
@@ -51,11 +63,13 @@ func (s *State) render(path string) error {
 	defer f.Close()
 
 	return s.tmpl.Execute(f, struct {
-		Body template.HTML
-		Root string
+		Title string
+		Body  template.HTML
+		Root  string
 	}{
-		Body: template.HTML(string(html)),
-		Root: root,
+		Title: title,
+		Body:  template.HTML(string(html)),
+		Root:  root,
 	})
 }
 
