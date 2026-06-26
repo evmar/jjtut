@@ -1,19 +1,21 @@
 # The Sales Pitch
 
 Is it really worth your time to learn a new version control system? I think the
-answer is yes; certainly it was for me and many other fans of this tool!
+answer is yes. Certainly it was for me and many other fans of this tool! I adopt
+new tools rarely and evangelize them even less often, but jj has been my
+favorite of the last few years.
 
 In this document I try to give the high-level sales pitch for why jj is worth
 your time.
 
-## Interoperation
+## Interoperation and risk
 
 To start with, it's easy to try out and you have little to lose.
 
 jj stores its data in Git and can be thought of as a different user interface
 for Git, so you still can use Git tools like GitHub as before. If you try jj and
-don't like it, abandoning it is about as simple as switching back to Git
-commands in your same checkout.
+don't like it, abandoning it is about as simple as `rm -rf .jj` and switching
+back to Git commands in your same checkout.
 
 ## Simple but powerful
 

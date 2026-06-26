@@ -9,6 +9,7 @@
 - Part 2: History
   - [History](history.html)
   - [Editing commits](editing.html)
+  - [Conflicts](conflicts.html)
+- TODO
   - [jj squash](squash.html)
-- [Nonlinear history](nonlinear.html)
-- [Conflicts](conflicts.html)
+  - [Nonlinear history](nonlinear.html)

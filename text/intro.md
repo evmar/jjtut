@@ -37,12 +37,13 @@ working on something else, your work is already saved. (This replaces Git's
 
 For another example, if you need to fix a typo in an old commit, you can switch
 directly to it and just make the edits. (This replaces many `git rebase -i`
-workflows.) Changing the description of an old commit is the same command as
+workflows.) Changing the description or contents of an old commit is the same as
 changing the description of the newest one. (This replaces `commit --amend`.)
 
 This approach has further implications on how merge/rebase conflicts work. There
 is no "rebase in progress" state or commands like `git rebase --continue`.
-Instead you use the same core commands to resolve conflicts.
+Instead rebases create conflicting commits, and you resolve conflicts by
+directly editing those commits using the same core commands as elsewhere.
 
 Finally, jj records a log of every operation on the respository to provide
 pervasive undo. Because working copy state is always mirrored into the
