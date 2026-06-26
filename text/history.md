@@ -59,6 +59,7 @@ In this chapter, we learned:
 
 - specify revisions using the `-r` flag to `diff`
 - there exists a 'revset' language for specifying revisions
+- `@` refers to the current commit, `@-` refers to the previous one
 
 ## Next step
 
