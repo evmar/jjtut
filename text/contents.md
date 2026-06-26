@@ -1,10 +1,13 @@
-1. [Welcome](index.html)
-1. [Sales pitch](pitch.html)
-1. [Introduction](intro.html)
-1. [Setup](setup.html)
-1. [Basics](basics.html)
-1. [History](history.html)
-1. [Editing commits](editing.html)
-1. [jj squash](squash.html)
-1. [Nonlinear history](nonlinear.html)
-1. [Conflicts](conflicts.html)
+- Introduction
+  - [Welcome](index.html)
+  - [Sales pitch](pitch.html)
+- Part 1: Basics
+  - [Introduction](intro.html)
+  - [Setup](setup.html)
+  - [Basics](basics.html)
+- Part 2: History
+  - [History](history.html)
+  - [Editing commits](editing.html)
+  - [jj squash](squash.html)
+- [Nonlinear history](nonlinear.html)
+- [Conflicts](conflicts.html)
