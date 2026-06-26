@@ -59,7 +59,7 @@ In this chapter, we learned:
 
 - edits may produce conflicts, which show up in the history
 - fixing conflicting files in a conflicting commit implicitly fixes the conflict
-  state that that commit and possibly downstream ones
+  state of that commit and possibly downstream ones
 
 ## Next step
 
