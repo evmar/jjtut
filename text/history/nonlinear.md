@@ -59,4 +59,4 @@ conflicted state. It's resolved by editing the files.
 ## Next step
 
 You now have seen most of the concepts you'll encounter.  To apply
-them in practice, start [learning recipes](recipes.html).
+them in practice, read [part 3: recipes](../recipes).

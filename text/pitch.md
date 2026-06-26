@@ -79,4 +79,4 @@ same time, letting you test how multiple in-progress changes work together.
 
 ## Next step
 
-[Read about the big picture](intro.html).
+[Read about the big picture](../basics).

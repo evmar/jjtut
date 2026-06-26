@@ -100,4 +100,4 @@ This ends the "basics" part of the tutorial. So far all the commands we've
 discussed have worked on the top of a single linear history, but they all also
 can work across different branches as well as earlier points in history.
 
-Read on to [part 2, history](history.html), to learn about this.
+Read on to [part 2, history](../history), to learn about this.

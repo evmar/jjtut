@@ -1,6 +1,6 @@
 <!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{{.Root}}style.css" rel="stylesheet">
-<nav>{{.Nav}}</nav>
+<nav>{{template "toc" .}}</nav>
 <main><header class=warning>Warning: this is a work-in-progress snapshot of an incomplete work!</header>
 {{.Body}}</main>

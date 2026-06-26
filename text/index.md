@@ -6,7 +6,7 @@ learn to use jj.
 
 Why bother? Read [my Jujutsu sales pitch](pitch.html).
 
-Ready to learn? [Start the tutorial](intro.html).
+Ready to learn? [Start the tutorial](basics/).
 
 ## Alternatives
 

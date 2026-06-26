@@ -1,0 +1,16 @@
+- Introduction
+  - [Welcome]({{.Root}})
+  - [Sales pitch]({{.Root}}pitch.html)
+- Part 1: Basics
+  - [Introduction]({{.Root}}basics/)
+  - [Setup]({{.Root}}basics/setup.html)
+  - [Basics]({{.Root}}basics/basics.html)
+  - [Fixing mistakes]({{.Root}}basics/fixing.html)
+- Part 2: History
+  - [History]({{.Root}}history/)
+  - [Editing commits]({{.Root}}history/editing.html)
+  - [Conflicts]({{.Root}}history/conflicts.html)
+  - [Nonlinear history]({{.Root}}history/nonlinear.html)
+- Part 3: Recipes
+  - [Recipes]({{.Root}}recipes/recipes.html)
+  - [jj squash]({{.Root}}recipes/squash.html)
