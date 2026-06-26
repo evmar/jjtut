@@ -2,8 +2,8 @@
 
 So far we've created a linear sequence of commits. But we are free to start new
 commits from anywhere. Suppose we want to try out greeting someone else. Let's
-start a new change starting from our initial "hello" file and add a different
-greeting, by passing which commit to start from to `jj new`.
+start a new change starting from our initial "hello" file, by passing which
+commit to start from to `jj new`.
 
 ```
 $ jj new q
@@ -28,8 +28,24 @@ The log now shows a branched tree.
 ## Branches
 
 Unlike Git, jj does not have a notion of a "current branch". Instead, any
-commits you create are saved, and you can jump between them with `jj edit` as
-you desire.
+commits you create are saved, and you jump between them with `jj edit` as you
+desire. This also means that there are no names for branches outside of the
+names you give to your commits.
 
 When you work with external Git repositories that contain Git branches, they
-show up in jj
+still show up in jj as branched code. And jj has features for pushing and
+pulling to Git branches, which we'll go into later.
+
+In my experience, I expected to miss having having named branches, but actually
+it ended up fine.
+
+## Merges
+
+To merge branches, pass multiple arguments to `jj new`:
+
+```
+$ jj new commit-a commit-b
+```
+
+Exactly like rebases, if there is a merge conflict, the new commit results in a
+conflicted state. It's resolved by editing the files.
