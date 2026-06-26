@@ -1,4 +1,4 @@
-# Workflow: squash instead of edit
+# jj workflow: squash instead of edit
 
 When you want to make a quick fix in a commit, using `jj edit` to jump directly
 to it and editing the file directly is the quickest way. But any edits you make
@@ -13,7 +13,7 @@ from the commit you're trying to fix up, so commands `jj diff` and `jj restore`
 will only apply to the new edits you're making.
 
 Once you're done, you can squash the fixups, similar to how the
-[staging workflow](staging.html) goes.
+[staging workflow](staging) goes.
 
 After running `jj squash`, you're left pointed at an empty commit; if you go
 elsewhere with it will be automatically abandoned.
@@ -66,7 +66,7 @@ start a new commit based on X, and then `jj squash` when you're done with your
 edits.
 
 In the jj community this is called "the squash workflow". martinvonz, the jj
-project leader works this way.  In my experience I use `jj edit` for simple
+project leader works this way. In my experience I use `jj edit` for simple
 fixups and the squash workflow when I think a fix might be more complex.
 
-[Back to the workflow list](./).
+[Back to the workflow list](../).

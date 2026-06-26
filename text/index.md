@@ -4,7 +4,7 @@
 system that is both simple and powerful. This site is a tutorial will help you
 learn to use jj.
 
-Why bother? Read [my Jujutsu sales pitch](pitch.html).
+Why bother? Read [my Jujutsu sales pitch](pitch).
 
 Ready to learn? [Start the tutorial](basics/).
 

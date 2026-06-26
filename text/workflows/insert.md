@@ -1,4 +1,4 @@
-# Workflow: inserting commits
+# jj workflow: inserting commits
 
 Suppose you are halfway through a change and you notice some smaller change that
 you had ought to have done first.
@@ -20,4 +20,4 @@ $ jj new -B @
 and you will now be editing a new commit, inserted just before your current
 work. Your in-progress change will be rebased on top of any edits you make.
 
-[Back to the workflow list](./).
+[Back to the workflow list](../).

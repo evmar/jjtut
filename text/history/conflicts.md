@@ -64,4 +64,4 @@ In this chapter, we learned:
 ## Next step
 
 So far we've worked on a single linear history. Next learn about
-[nonlinear history and branches](nonlinear.html).
+[nonlinear history and branches](../nonlinear).

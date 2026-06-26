@@ -63,10 +63,10 @@ features compose.
 
 As a Git expert I was already comfortable using tools like `git stash` and
 `git rebase -i` to move code around. What I found after adopting jj is that
-while it was always possible to make Git do what I wanted it to do, with jj I
+while I always _could_ make Git do what I wanted it to do, with jj I
 can do the same things more easily and quickly.
 
-Common tasks like "while writing this change I realized there's a change I ought
+Common tasks "while writing this change I realized there's a change I ought
 to do first" are possible with Git but trivial with jj. As a developer I've
 found it's made me more confident in how I experiment, because it's so easy to
 move code around.
@@ -79,4 +79,4 @@ same time, letting you test how multiple in-progress changes work together.
 
 ## Next step
 
-[Read about the big picture](../basics).
+[Read about the big idea](../basics).

@@ -31,9 +31,15 @@ func (s *State) render(path string) error {
 	}
 	html := markdown.ToHTML(md, parser.NewWithExtensions(extensions), html.NewRenderer(options))
 
-	root := strings.Repeat("../", strings.Count(path, "/"))
+	var dst string
+	if strings.HasSuffix(path, "index.md") {
+		dst = strings.TrimSuffix(path, ".md") + ".html"
+	} else {
+		dst = strings.TrimSuffix(path, ".md") + "/index.html"
+	}
+	root := strings.Repeat("../", strings.Count(dst, "/"))
 
-	dst := filepath.Join(s.dst, strings.TrimSuffix(path, ".md")+".html")
+	dst = filepath.Join(s.dst, dst)
 	dstDir := filepath.Dir(dst)
 	if err := os.MkdirAll(dstDir, 0777); err != nil {
 		return err

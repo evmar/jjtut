@@ -58,4 +58,4 @@ almost the same if you clone an existing repository instead.
 
 ## Next step
 
-[Start learning the basics](basics.html).
+[Start learning the basics](../basics).

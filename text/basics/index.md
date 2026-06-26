@@ -1,4 +1,4 @@
-# Introduction
+# The big idea
 
 jj stores your data in a Git repository. jj's underlying model of how your
 history is tracked is more or less the same as Git, with branches and commits,
@@ -7,7 +7,7 @@ and when using it you still interoperate with Git hosting.
 jj differs from Git in its improved user interface and the way it represents
 history.
 
-## The central idea
+## The working copy is a commit
 
 Most of jj's functionality comes from one big idea: **the working copy is a
 commit**. Understanding this concept will explain much of how jj works.
@@ -46,10 +46,9 @@ Instead rebases create conflicting commits, and you resolve conflicts by
 directly editing those commits using the same core commands as elsewhere.
 
 Finally, jj records a log of every operation on the respository to provide
-pervasive undo. Because working copy state is always mirrored into the
-repository, this covers all the above operations. (Like an enhanced
-`git reflog`.)
+pervasive undo. Because working copy state is mirrored into the repository, this
+log also covers changes to local files. (Like an enhanced `git reflog`.)
 
 ## Next step
 
-[Start by setting things up](setup.html).
+[Start by setting things up](setup).

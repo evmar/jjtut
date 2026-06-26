@@ -2,4 +2,4 @@
 
 set -e
 
-fswatch -o book text | xargs -n1 ./build.sh
+fswatch -o book/*.go* book/*.css text | xargs -n1 ./build.sh

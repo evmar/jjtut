@@ -119,4 +119,4 @@ In this chapter, we learned:
 
 We've modified history, but so far have been careful to avoid making a changes
 that causes a conflict. What happens if we make an edit that conflicts?
-[Read next about conflicts](conflicts.html).
+[Read next about conflicts](../conflicts).

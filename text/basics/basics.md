@@ -114,4 +114,4 @@ In this chapter, we learned:
 
 If you stopped reading here, you have all you need to start using jj for adding
 commits to a project. The next most important thing to learn is
-[how to fix mistakes](fixing.html).
+[how to fix mistakes](../fixing).

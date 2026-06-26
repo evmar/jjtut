@@ -65,4 +65,4 @@ In this chapter, we learned:
 
 ## Next step
 
-[Learn about editing commits](editing.html).
+[Learn about editing commits](editing).

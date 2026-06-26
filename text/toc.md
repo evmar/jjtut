@@ -1,16 +1,16 @@
 - Introduction
   - [Welcome]({{.Root}})
-  - [Sales pitch]({{.Root}}pitch.html)
+  - [Sales pitch]({{.Root}}pitch)
 - Part 1: Basics
-  - [Introduction]({{.Root}}basics/)
-  - [Setup]({{.Root}}basics/setup.html)
-  - [Basics]({{.Root}}basics/basics.html)
-  - [Fixing mistakes]({{.Root}}basics/fixing.html)
+  - [The big idea]({{.Root}}basics/)
+  - [Setup]({{.Root}}basics/setup)
+  - [Basics]({{.Root}}basics/basics)
+  - [Fixing mistakes]({{.Root}}basics/fixing)
 - Part 2: History
   - [History]({{.Root}}history/)
-  - [Editing commits]({{.Root}}history/editing.html)
-  - [Conflicts]({{.Root}}history/conflicts.html)
-  - [Nonlinear history]({{.Root}}history/nonlinear.html)
+  - [Editing commits]({{.Root}}history/editing)
+  - [Conflicts]({{.Root}}history/conflicts)
+  - [Nonlinear history]({{.Root}}history/nonlinear)
 - Part 3: Workflows
   - [Workflows]({{.Root}}workflows/)
 - Part 4: Git
