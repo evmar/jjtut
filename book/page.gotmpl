@@ -4,8 +4,12 @@
 <link href="{{.Root}}style.css" rel="stylesheet">
 <body>
 <header>Evan's Jujutusu Tutorial &mdash; <a href='https://github.com/evmar/jjtut'>GitHub</a></header>
-<div>
-<nav>{{template "toc" .}}</nav>
-<main>{{.Body}}</main>
-</div>
+<main>
+    <nav>
+        <input id=toc-toggle type=checkbox>
+        <label id=toc-label for=toc-toggle>Show table of contents</label>
+        <div id=toc>{{template "toc" .}}</div>
+    </nav>
+    {{.Body}}
+</main>
 </body>
