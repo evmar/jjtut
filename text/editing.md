@@ -87,6 +87,8 @@ description) to your new commit, it would not have been abandoned.
 
 ## Review
 
+In this chapter, we learned:
+
 - history is mutable
 - editing history causes downstream changes to update
 - `jj edit`: jump to a specific change and begin editing it

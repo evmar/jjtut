@@ -1,7 +1,8 @@
 # History
 
-Run `jj log` to see the repository history. (I've removed dates from my output
-just to reduce visual noise.)
+Run `jj log` (or just `jj` by itself, if you followed the default configuration
+in the [setup](setup.html) section) to see the repository history. (In this
+tutorial, I've removed dates from my output just to reduce visual noise.)
 
 ```
 @  umnvtwlo my@email 20de4517
@@ -15,8 +16,8 @@ just to reduce visual noise.)
 
 From the top:
 
-1. umnvtwlo is an empty commit
-1. pwnrkwpn and qlmqnzqo were our two edits
+1. umnvtwlo is the empty current commit
+1. pwnrkwpn and qlmqnzqo were two edits I made
 1. zzzzzzzz is a special "root" commit that starts the repository and is is
    always empty
 
@@ -31,8 +32,8 @@ We've used `jj diff` to see the diff of the current change. `diff` (and many
 other jj commands) can also be told which change to work with by using the `-r`
 flag.
 
-Here, I use `q` as the unique prefix of my first commit (use your own in place
-of `q`):
+Here, I use `q` as the unique prefix of my first commit to specify it. (You'll
+need to use your own in place of `q`):
 
 ```
 $ jj diff -r q
@@ -41,8 +42,9 @@ $ jj diff -r q
 
 The argument passed to `-r` is called a _revset_, and in jj it is a miniature
 [programming language for specifying commits](https://jj-vcs.github.io/jj/latest/revsets/).
-The `root()` shown in the above output is a function in that language that gets
-the repository's root commit.
+The `root()` shown in the above log output is a function in that language that
+gets the repository's root commit, and it's shown in the log output as another
+way of specifying that commit.
 
 In practice, almost all you need to know is that the alias "`@`" refers to the
 current commit, and the operator "`-`" means "the commit before". So the revset

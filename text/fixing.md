@@ -81,9 +81,12 @@ tends to be more fine-grained and pervasive.
 
 ## Review
 
+In this chapter, we learned:
+
 - `jj restore`: restore files
 - `jj abandon`: throw away a commit
 - `jj squash`: merge a commit into its parent, fixing up previous commit
+- `jj op`: entry point to op log subcommands
 - `jj undo`: undo any previous `jj` command
 
 ## Next step

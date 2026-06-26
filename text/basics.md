@@ -103,7 +103,7 @@ Parent commit      : pwnrkwpn 3d263ba5 make foo say hello, world
 
 ## Review
 
-In this chapter, we learned about:
+In this chapter, we learned:
 
 - `jj status` (`jj st`): show status (files included, etc.) of a change
 - `jj diff`: show diff of a change

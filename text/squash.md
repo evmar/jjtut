@@ -42,4 +42,6 @@ you've been using on will be automatically cleaned up.
 
 ## Review
 
+In this chapter, we learned:
+
 - `jj abandon`: abandon (delete) a commit
