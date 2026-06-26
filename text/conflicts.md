@@ -62,3 +62,6 @@ In this chapter, we learned:
   state that that commit and possibly downstream ones
 
 ## Next step
+
+So far we've worked on a single linear history. Next learn about
+[nonlinear history and branches](nonlinear.html).

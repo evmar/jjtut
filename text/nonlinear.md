@@ -49,3 +49,14 @@ $ jj new commit-a commit-b
 
 Exactly like rebases, if there is a merge conflict, the new commit results in a
 conflicted state. It's resolved by editing the files.
+
+## Review
+
+- `jj new` can start from anywhere, possibly creating a branch
+- there is no explicit branch-like concept, just commits
+- `jj new` accepts multiple arguments, creating a merge
+
+## Next step
+
+You now have seen most of the concepts you'll encounter.  To apply
+them in practice, start [learning recipes](recipes.html).
