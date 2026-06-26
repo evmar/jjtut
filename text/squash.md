@@ -15,7 +15,7 @@ might recognize the "squash" terminology from `git rebase -i`.) After running
 `jj squash`, you're left pointed at an empty commit; if you go elsewhere with
 `jj edit`, it will be automatically abandoned.
 
-## jj squash and the Git index
+## Recipe: jj squash and the Git index
 
 Advanced Git users might be accustomed to building up a single change by
 incrementally adding parts of it to the index, which in Git can be thought of as
