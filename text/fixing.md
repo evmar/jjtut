@@ -1,15 +1,25 @@
 # Fixing mistakes
 
-Sometimes you start on a change and realize it's a bad idea.  Sometimes
-after you've moved on you realize your mistake.
+Sometimes you start on a change and realize it's a bad idea. Sometimes only
+after you've moved on do you realize your mistake. Both are easy to fix.
 
 ## jj restore
 
-`jj restore` copies file contents from the previous commit. You can specify
-which paths to restore, and with no arguments it copies all files.
+`jj restore` copies file contents from the previous commit. With no arguments,
+this empties the current commit of file changes, effectively deleting all
+changes you've made. This preserves the current commit's description and change
+ID.
 
-This empties the current commit of file changes, effectively deleting the changes you've
-made. This preserves the current commit's description and change ID.
+```
+$ rm important-file
+... whoops
+$ jj restore
+Working copy  (@) now at: vwvywzku (empty) (no description set)
+Parent commit (@-)      : [...]
+Added 1 files, modified 0 files, removed 0 files
+```
+
+You also can specify which paths to restore to only undo specific files.
 
 ## jj abandon
 
@@ -22,9 +32,50 @@ important in more complex workflows.
 
 ## jj squash
 
-Even after you've finished a commit and started a new one, you might notice
-you made a typo in some file that you really ought to have included.
+Even after you've finished a commit and started a new one, you might notice you
+made a typo in some file that you really ought to have included.
 
-To fix this, you can fix the typo in the current commit, then run `jj squash`
-It takes any changes in the current foo commit and merges them into the
-previous one.
+To fix this, you can fix the typo in the current commit, then run `jj squash` It
+takes any changes in the current commit and merges them into the previous one.
+(Git users might notice the `squash` terminology from `git rebase -i`.)
+
+`jj squash` becomes more important in more complex workflows, which we'll get to
+later.
+
+## The op log and jj undo
+
+These commands that throw away code may seem risky, but it's also easy to fix
+mistakes when using them.
+
+jj records any changes you make in a log called the
+"[operation log](https://docs.jj-vcs.dev/operation-log/). This includes not only
+the state after you run a jj command, but also any time it updates the current
+commit due to noticing a changed file. This log is distinct from your history of
+commits.
+
+The `jj op` command has a collection of subcommands to view this log, see diffs,
+and restore state from it, but I've almost never needed to use it.
+
+The simpler `jj undo` command undoes the most recent entry in the op log, and
+`jj redo` goes the other way. So if you try a command like `jj restore` and
+realize it ruined something, you can `jj undo` your way out of it.
+
+A Git note: this feature is comparable to the Git reflog. But in my experience,
+sometimes I lost things with Git that weren't contained in the reflog. In
+contrast, because jj commands always snapshot your current commit, the jj op log
+tends to be more fine-grained and pervasive.
+
+## Review
+
+- `jj restore`: restore files
+- `jj abandon`: throw away a commit
+- `jj squash`: merge a commit into its parent, fixing up previous commit
+- `jj undo`: undo any previous `jj` command
+
+## Next step
+
+This ends the "basics" part of the tutorial. So far all the commands we've
+discussed have worked on the top of a single linear history, but they all also
+can work across different branches as well as earlier points in history.
+
+Read on to [part 2, history](history.html), to learn about this.
