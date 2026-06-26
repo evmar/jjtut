@@ -30,8 +30,10 @@ and empty description.
 ```
 $ echo "rewrite from scratch" > README.md
 $ jj desc -m "a bold new plan"
-[... wait a sec!]
+[... wait a sec, that was a bad idea!]
 $ jj abandon
+Abandoned 1 commits:
+[...]
 ```
 
 The distinction with `jj restore` may seem small, but it will become more
@@ -50,7 +52,7 @@ takes any changes in the current commit and merges them into the previous one.
 `jj squash` becomes more important in more complex workflows, which we'll get to
 later.
 
-## The op log and jj undo
+## The operation log
 
 These commands that throw away code may seem risky, but it's also easy to fix
 mistakes when using them.
@@ -58,18 +60,21 @@ mistakes when using them.
 jj records any changes you make in a log called the
 "[operation log](https://docs.jj-vcs.dev/operation-log/)". This includes not
 only the state after you run a jj command, but also any time it updates the
-current commit due to noticing a changed file. This log is private distinct from
-your history of commits.
+current commit due to noticing a changed file. This log is private and distinct
+from your history of commits.
 
 The `jj op` command has a collection of subcommands to view this log, see diffs,
-and restore state from it, but I've almost never needed to use it.
+and restore state from it, but I've almost never needed to use it because
+there's a simpler alternative:
 
-The simpler `jj undo` command undoes the most recent entry in the op log, and
-`jj redo` goes the other way.
+## jj undo
+
+The `jj undo` command undoes the most recent entry in the op log, and `jj redo`
+goes the other way.
 
 ```
 $ jj restore
-[... whoops, I didn't mean to delete everything! ...]
+[... whoops, I didn't mean to delete everything!]
 $ jj undo
 [... files are back.]
 ```

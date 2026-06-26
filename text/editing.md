@@ -17,7 +17,7 @@ generally freely editable and feels pretty similar to editing the newest change.
 
 Recall that `jj undo` helps if you make any mistakes. And when working with Git,
 jj has additional functionality related to not accidentally modifying commits
-you shouldn't. We'll get that later.
+you shouldn't. We'll get to that later.
 
 ## Rebasing
 
@@ -97,9 +97,9 @@ $ jj edit commit-i-was-on-before
 
 ## Empty commits and jumping back
 
-A second thing to notice about the `jj log` output is that the top empty commit
-disappeared. This is because jj abandons empty commits when you move away from
-them.
+A second thing to notice about the `jj log` output above is that the top empty
+commit disappeared. This is because jj abandons empty commits when you move away
+from them.
 
 You can start a new commit at the top with `jj new p`, where `p` is the name of
 the commit to start from. (You can now see that `jj new` both creates the new
