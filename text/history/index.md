@@ -16,20 +16,19 @@ this tutorial, I've removed dates from my output just to reduce visual noise.)
 
 From the top:
 
-1. umnvtwlo is the empty current commit
-1. pwnrkwpn and qlmqnzqo were two edits I made
-1. zzzzzzzz is a special "root" commit that starts the repository and is is
+1. `umnvtwlo` is the empty current commit
+1. `pwnrkwpn` and `qlmqnzqo` were two edits I made
+1. `zzzzzzzz` is a special "root" commit that starts the repository and is is
    always empty
 
-In a terminal, these commits will have some prefix (often the initial letter)
-highlighted or in bold. This indicates the unique prefix of the commit that can
-be used to refer to it in commands. jj commands accept either jj or Git commit
-IDs.
+In a terminal, these IDs will have some prefix (often the initial letter)
+highlighted or in bold. This indicates the unique prefix of the ID that can be
+used to refer to it in commands.
 
 ## Diffs and revsets
 
-We've used `jj diff` to see the diff of the current change. `diff` (and many
-other jj commands) can also be told which change to work with by using the `-r`
+We've used `jj diff` to see the diff of the current commit. `diff` (and many
+other jj commands) can also be told which commit to work with by using the `-r`
 flag.
 
 Here, I use `q` as the unique prefix of my first commit to specify it. (You'll

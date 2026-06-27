@@ -109,7 +109,7 @@ across different commands.
 In this chapter, we learned:
 
 - history is mutable
-- editing history causes downstream changes to update
+- editing history causes downstream commits to update
 - `jj edit`: jump to a specific change and begin editing it
 - `jj new`: accepts an argument for which commit to start from
 - moving away from empty commits causes them to be automatically abandoned

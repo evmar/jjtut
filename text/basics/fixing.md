@@ -7,8 +7,7 @@ after you've moved on do you realize your mistake. Both are easy to fix.
 
 `jj restore` copies file contents from the previous commit. With no arguments,
 this empties the current commit of file changes, effectively deleting all
-changes you've made. This preserves the current commit's description and change
-ID.
+changes you've made. This preserves the current commit's description and ID.
 
 ```
 $ rm foo
@@ -24,8 +23,8 @@ You also can specify which paths to restore to only undo specific files.
 ## jj abandon
 
 The `jj abandon` command throws away a commit. If you abandon the current
-commit, jj will recreate a new empty commit in its place, with a new change ID
-and empty description.
+commit, jj will recreate a new empty commit in its place, with a new ID and
+empty description.
 
 ```
 $ echo "rewrite from scratch" > foo

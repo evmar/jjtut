@@ -12,7 +12,7 @@ main@origin: mzrrnrom broken link
 
 jj bookmarks are names that point at commits and can be used independently of
 working with Git. They can be created, modified, and destroyed with
-`jj bookmark` subcommands, and used in place of commit IDs in commands.
+`jj bookmark` subcommands, and used in place of IDs in commands.
 
 In my experience they aren't too useful on their own. If you modify a commit the
 bookmark remains pointing at it, but unlike Git branches, they don't
@@ -44,7 +44,7 @@ What "tracked" means here is that jj will attempt to keep `main` in sync with
 ## Pushing tracked bookmarks
 
 When you commit a new change locally and want to push it, you first need to
-update `main` to point at the new change:
+update `main` to point at the new commit:
 
 ```
 $ jj bookmark move main -t @

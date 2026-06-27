@@ -11,16 +11,28 @@ Parent commit (@-): zzzzzzzz 00000000 (empty) (no description set)
 ```
 
 This shows the current working copy commit is named `qlmqnzqo`. (It will be
-different for you.) jj commit IDs are stable: if you edit files, change their
-description, or move them around, the commit ID will not change.
-
-The hex `7437703d` is the Git ID for the commit. (It will be different for you.)
-This will change as the commit changes. You can distinguish jj change IDs from
-Git IDs because they don't use the same letters; Git IDs are hex, while jj IDs
-don't use those digits.
+different for you.) jj change IDs are stable: if you change their description,
+edit files, or move them around, the change ID will not change.
 
 Currently the commit is `(empty)` (with no file changes in it) and it has
 `(no description set)`.
+
+## Changes versus commits
+
+The hex `7437703d` is the Git commit ID. (It will be different for you.) This
+will change as the commit changes. You can distinguish jj change IDs from Git
+commit IDs because they don't use the same letters; Git commit IDs are hex,
+while change IDs don't use those digits.
+
+A terminology note. To be precise, `qlmqnzqo` identifies a "change": the thing
+you can edit over time. `7437703d` identifies a "commit" (or synonymously
+"revision"): an immutable snapshot. In practice the distinction is effectively
+an implementation detail, and you will almost never need to think about Git
+commits or commit IDs.
+
+In this tutorial I try to call everything "commits" for simplicity, in
+particular because I use the word "change" in its informal sense of "the code
+change you're working on".
 
 ## First change
 

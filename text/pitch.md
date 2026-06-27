@@ -38,7 +38,7 @@ together.
 
 Here are a few of my favorite features of jj:
 
-- Making a fix-up to some earlier change is an easy and trivial workflow.
+- Making a fixup to some earlier change is an easy and trivial workflow.
 
 - If you're halfway through some change and realize there's something else you
   needed to do first, it's easy to start a new change before the current one and
