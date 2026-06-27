@@ -84,4 +84,4 @@ repository. We'll go into them next.
 
 ## Next step
 
-To push Git changes we need to [learn about bookmarks](../bookmarks).
+To push Git changes we need to [learn about bookmarks](bookmarks).

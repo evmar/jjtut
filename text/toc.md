@@ -15,3 +15,4 @@
   - [Workflows]({{.Root}}workflows/)
 - Part 4: Git
   - [Working with Git]({{.Root}}git/)
+  - [Bookmarks]({{.Root}}git/bookmarks)
