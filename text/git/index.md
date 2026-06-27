@@ -12,9 +12,9 @@ around:
 ```
 $ jj git clone https://github.com/evmar/jjtut.git
 $ jj log
-@  kpmzwpnw my@email 2026-06-26 15:29:12 fc5fe481
+@  kpmzwpnw my@email fc5fe481
 │  (empty) (no description set)
-◆  mzrrnrom evan.martin@gmail.com 2026-06-26 14:54:27 main@origin ead50b5a
+◆  mzrrnrom evan.martin@gmail.com main@origin ead50b5a
 │  broken link
 ~
 ```

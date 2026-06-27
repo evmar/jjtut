@@ -52,7 +52,7 @@ $ jj bookmark move main -t @
 Moved 1 bookmarks to tststvny main* | [...]
 ```
 
-You'll now see the bookmark marked with a star, `main*`. What this represents is
+You'll now see the bookmark marked with a star, `main*`. What this indicates is
 that the local bookmark is out of sync with the `main@origin` it tracks. If you
 `jj git push` it will update the origin with the new main and bring things back
 into sync.
@@ -70,10 +70,28 @@ Working copy  (@) now at: ntxvxxzz (empty) (no description set)
 Parent commit (@-)      : tststvny main | [...]
 ```
 
-This workflow of needing to manually update the bookmark before is a bit clunky.
-We'll go into improvements later.
+The need to manually update the bookmark before pushing is known to be clunky.
 
 ## Pulling tracked bookmarks
 
 If you `jj git fetch` to pull changes from the remote, jj will gather new
-commits, update `main@origin`, and also update `main` if possible.
+commits, update `main@origin`, and also update `main`.
+
+What if you've already changed your local `main`? It now points at two different
+places: your local commit and whatever commit it pulled from the origin. It is
+now _conflicted_.
+
+```
+$ jj log
+@  trzlszwl my@email main?? main@git 491fa5d3
+│  [my local change]
+│ ◆  xysoxspt evan.martin@gmail.com main?? main@origin 4fda16de
+├─╯  [a new change from the origin]
+◆  xwlqyxry evan.martin@gmail.com 062b7af9
+│  touchups
+~
+```
+
+In the log, the conflicted bookmark shows as `main??`, pointing at both of the
+commits. You cannot use it until you fix things by manually pointing it at a
+single commit using `jj bookmark move`.
