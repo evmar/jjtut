@@ -11,9 +11,9 @@ Ready to learn? [Start the tutorial](basics/).
 ## AI statement
 
 This text was all written by hand by [Evan Martin](https://neugierig.org/), a
-human. I disclaim this in particular so you can expect that the choices made in
-what to mention, what to leave out, and in what order were carefully considered;
-no slop here!
+human. I disclaim no AI in particular so you can expect that the choices made in
+what to mention, what to leave out, and in what order were carefully considered.
+After writing most of it I did use AI to check for mistakes.
 
 ## Alternatives
 

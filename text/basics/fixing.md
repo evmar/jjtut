@@ -49,8 +49,8 @@ takes any changes in the current commit and merges them into the previous one.
 (Git users might compare this to `git commit --amend`, and also might notice the
 `squash` terminology from `git rebase -i`.)
 
-`jj squash` becomes more important in more complex workflows, which we'll get to
-later.
+`jj squash` becomes more useful once you're looking more at commit history and
+more important in more complex workflows, and we'll get to both later.
 
 ## The operation log
 

@@ -13,7 +13,7 @@ from the commit you're trying to fix up, so commands `jj diff` and `jj restore`
 will only apply to the new edits you're making.
 
 Once you're done, you can squash the fixups, similar to how the
-[staging workflow](staging) goes.
+[staging workflow](../staging) goes.
 
 After running `jj squash`, you're left pointed at an empty commit; if you go
 elsewhere with it will be automatically abandoned.

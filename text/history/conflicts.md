@@ -2,8 +2,9 @@
 
 We now have the tools necessary to understand conflicts.
 
-Let's modify your first change in such a way that a later change will conflict
-with it. For example, change "hello" to "goodbye".
+Recall the commits from earlier. Let's modify your first change in such a way
+that a later change will conflict with it. For example, change "hello" to
+"goodbye".
 
 ```
 $ jj edit q

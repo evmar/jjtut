@@ -36,8 +36,8 @@ When you work with external Git repositories that contain Git branches, they
 still show up in jj as branched code. And jj has features for pushing and
 pulling to Git branches, which we'll go into later.
 
-In my experience, I expected to miss having having named branches, but actually
-it ended up fine.
+In my experience, I expected to miss having named branches, but actually it
+ended up fine.
 
 ## Merges
 

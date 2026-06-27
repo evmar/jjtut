@@ -69,9 +69,9 @@ Working copy  (@) now at: ntxvxxzz (empty) (no description set)
 Parent commit (@-)      : tststvny main | [...]
 ```
 
-The need to manually update the bookmark before pushing is known to be a bit clunky.
-jj is currently designed around the workflow where you don't often need to move a bookmark
-around after you push it; see below.
+The need to manually update the bookmark before pushing is known to be a bit
+clunky. jj is currently designed around the workflow where you don't often need
+to move a bookmark around after you push it; see below.
 
 ## Pulling tracked bookmarks
 
@@ -99,14 +99,14 @@ single commit using `jj bookmark move`.
 
 ## Creating bookmarks automatically
 
-A common way for Git projects to integrate changes is via pull requests: you push
-your changes as a new branch, and after code review it gets integrated into the main
-branch.
+A common way for Git projects to integrate changes is via pull requests: you
+push your changes as a new branch, and after code review it gets integrated into
+the main branch.
 
-The `jj git push -c` (`--change`) command generates a new bookmark name and pushes
-it in one command.  On GitHub this is an easy way to create a pull request.  If you
-need to make changes in response to review feedback, you can modify your commits and
-`jj git push` again to update the pushed branch.
+The `jj git push -c` (`--change`) command generates a new bookmark name and
+pushes it in one command. On GitHub this is an easy way to create a pull
+request. If you need to make changes in response to review feedback, you can
+modify your commits and `jj git push` again to update the pushed branch.
 
 ## Review
 
