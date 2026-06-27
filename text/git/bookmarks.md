@@ -31,8 +31,7 @@ Attempts to change a remote bookmark directly with commands like
 ## Tracking bookmarks
 
 So far, bookmarks resemble Git refs, but the concept of "tracking" in jj is
-quite different. Create a `main` bookmark that is set up as tracking
-`main@origin`:
+different. Create a `main` bookmark that is set up as tracking `main@origin`:
 
 ```
 $ jj bookmark track main --remote origin
