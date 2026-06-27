@@ -10,7 +10,7 @@ otherwise, so it's worth doing now.)
 
 ```
 $ jj config set --user user.name "My Name"
-$ jj config set --user user.emil "my@email.address"
+$ jj config set --user user.email "my@email.address"
 ```
 
 If you run `jj` with no arguments, it prints a help message that suggests a
