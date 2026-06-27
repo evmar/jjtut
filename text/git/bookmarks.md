@@ -69,7 +69,9 @@ Working copy  (@) now at: ntxvxxzz (empty) (no description set)
 Parent commit (@-)      : tststvny main | [...]
 ```
 
-The need to manually update the bookmark before pushing is known to be clunky.
+The need to manually update the bookmark before pushing is known to be a bit clunky.
+jj is currently designed around the workflow where you don't often need to move a bookmark
+around after you push it; see below.
 
 ## Pulling tracked bookmarks
 
@@ -94,3 +96,22 @@ $ jj log
 In the log, the conflicted bookmark shows as `main??`, pointing at both of the
 commits. You cannot use it until you fix things by manually pointing it at a
 single commit using `jj bookmark move`.
+
+## Creating bookmarks automatically
+
+A common way for Git projects to integrate changes is via pull requests: you push
+your changes as a new branch, and after code review it gets integrated into the main
+branch.
+
+The `jj git push -c` (`--change`) command generates a new bookmark name and pushes
+it in one command.  On GitHub this is an easy way to create a pull request.  If you
+need to make changes in response to review feedback, you can modify your commits and
+`jj git push` again to update the pushed branch.
+
+## Review
+
+- `jj bookmark` is the entry point to bookmark commands
+- local bookmarks can be set to track remote bookmarks
+- `jj git push` pushes tracked bookmarks
+- `jj git fetch` updates tracked bookmarks
+- use `jj bookmark move` to move around local bookmarks
