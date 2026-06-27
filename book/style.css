@@ -32,7 +32,7 @@ pre {
     padding-left: 0.8em;
 }
 
-header {
+body > header {
     border-bottom: solid 1px hsl(0, 0%, 60%);
     text-align: center;
     padding: 1em;
@@ -54,6 +54,16 @@ main {
     max-width: 40em;
     margin: auto;
     padding: 1em;
+}
+
+main > header {
+    display: flex;
+    align-items: baseline;
+}
+main > header > h1 {
+    flex: 1;
+    padding-right: 1em;
+    white-space: nowrap;
 }
 
 .warning {

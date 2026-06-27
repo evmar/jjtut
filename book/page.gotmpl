@@ -1,16 +1,20 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{.Title}}</title>
+<title>{{if ne .Title "Evan's Jujutsu Tutorial"}}{{.Title}} &mdash; Evan's Jujutsu Tutorial{{else}}Evan's Jujutsu Tutorial{{end}}</title>
 <link href="{{.Root}}style.css" rel="stylesheet">
 <body>
-<header>Evan's Jujutsu Tutorial &mdash; <a href='https://github.com/evmar/jjtut'>GitHub</a></header>
+<header>Evan's Jujutsu Tutorial</header>
 <main>
     <nav>
         <input id=toc-toggle type=checkbox>
         <label id=toc-label for=toc-toggle>Show table of contents</label>
         <div id=toc>{{template "toc" .}}</div>
     </nav>
+    <header>
+    <h1>{{.Title}}</h1>
+    <small><a href="https://github.com/evmar/jjtut/issues/new?title=Feedback+on+{{.Page}}">Report an issue or ask a question</a></small>
+    </header>
     {{.Body}}
 </main>
 </body>

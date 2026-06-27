@@ -26,14 +26,10 @@ func (s *State) render(path string) error {
 		return err
 	}
 
-	firstLine, _, _ := bytes.Cut(md, []byte("\n"))
+	firstLine, rest, _ := bytes.Cut(md, []byte("\n"))
 	title, found := strings.CutPrefix(string(firstLine), "# ")
 	if !found {
 		return fmt.Errorf("expected first line to contain title")
-	}
-	subtitle := "Evan's Jujutsu Tutorial"
-	if title != subtitle {
-		title = title + " — " + subtitle
 	}
 
 	extensions := parser.FencedCode | parser.BackslashLineBreak
@@ -41,13 +37,14 @@ func (s *State) render(path string) error {
 		Flags: html.FlagsNone,
 		//RenderNodeHook: syntaxHighlightRenderHook,
 	}
-	html := markdown.ToHTML(md, parser.NewWithExtensions(extensions), html.NewRenderer(options))
+	html := markdown.ToHTML(rest, parser.NewWithExtensions(extensions), html.NewRenderer(options))
 
+	page := strings.TrimSuffix(path, ".md")
 	var dst string
 	if strings.HasSuffix(path, "index.md") {
-		dst = strings.TrimSuffix(path, ".md") + ".html"
+		dst = page + ".html"
 	} else {
-		dst = strings.TrimSuffix(path, ".md") + "/index.html"
+		dst = page + "/index.html"
 	}
 	root := strings.Repeat("../", strings.Count(dst, "/"))
 
@@ -64,10 +61,12 @@ func (s *State) render(path string) error {
 
 	return s.tmpl.Execute(f, struct {
 		Title string
+		Page  string
 		Body  template.HTML
 		Root  string
 	}{
 		Title: title,
+		Page:  page,
 		Body:  template.HTML(string(html)),
 		Root:  root,
 	})
