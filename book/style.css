@@ -58,11 +58,13 @@ main {
 
 main > header {
     display: flex;
-    align-items: baseline;
+    align-items: end;
+    margin-bottom: 1em;
 }
 main > header > h1 {
     flex: 1;
     padding-right: 1em;
+    margin: 0;
     white-space: nowrap;
 }
 
