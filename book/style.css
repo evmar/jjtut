@@ -24,12 +24,12 @@ code {
     font-family: monospace, monospace;
     font-size: 0.9em;
     background: hsl(0, 0%, 95%);
-    white-space: pre-wrap;
 }
 
 pre {
     border-left: solid 1px hsl(0, 0%, 60%);
     padding-left: 0.8em;
+    white-space: pre-wrap;
 }
 
 body > header {
