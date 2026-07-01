@@ -8,13 +8,6 @@ Why bother? Read [my Jujutsu sales pitch](pitch).
 
 Ready to learn? [Start the tutorial](basics/).
 
-## AI statement
-
-This text was all written by hand by [Evan Martin](https://neugierig.org/), a
-human. I disclaim no AI in particular so that you can expect that the choices
-made in what to mention, what to leave out, and in what order were carefully
-considered. (After writing most of it I did use AI to check for mistakes.)
-
 ## Goals and alternatives
 
 This tutorial is for readers familiar with Git, and aims to be consise and to
@@ -28,3 +21,11 @@ If this tutorial doesn't work out for you, try another:
   which is heavier on the details right from the start.
 - [Jujutsu for Everyone](https://jj-for-everyone.github.io/) is for readers
   without previous version control experience.
+
+## AI statement
+
+This text was all written by hand by [Evan Martin](https://neugierig.org/), a
+human. I used no AI, and disclaim this in particular so that you can expect that
+the choices made in what to mention, what to leave out, and in what order were
+carefully considered. (After writing most of it I did use AI to check for
+mistakes.)
