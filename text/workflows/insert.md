@@ -17,7 +17,7 @@ So you can just run:
 $ jj new -B @
 ```
 
-and you will now be editing a new commit, inserted just before your current
-work. Your in-progress change will be rebased on top of any edits you make.
+and you will now be editing a new commit, inserted just before your work in
+progress. That in-progress change will be rebased on top of any edits you make.
 
 [Back to the workflow list](../).
