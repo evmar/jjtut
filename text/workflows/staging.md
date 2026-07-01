@@ -6,7 +6,7 @@ a staging area for a pending change.
 
 jj models the workflow of building up a change by using regular commits.
 
-1. Start a new staging commit on top of your current one (run `jj new`).
+1. Start a new staging commit on top of your current one (`jj new`).
 1. Edit files as needed; whenever you're happy with them, `jj squash` them into
    the previous commit, or use `jj restore` to undo them.
 1. Repeat that step as many times as necessary.

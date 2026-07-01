@@ -23,7 +23,7 @@ elsewhere with it will be automatically abandoned.
 If that text was hard to follow, here's an example of using it to repair a
 conflict.
 
-To start with, suppose your project is in some conflicted state:
+To start with, suppose the project is in some conflicted state:
 
 ```
 $ jj log

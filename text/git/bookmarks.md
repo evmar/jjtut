@@ -11,8 +11,8 @@ main@origin: mzrrnrom broken link
 ## Bookmark basics
 
 jj bookmarks are names that point at commits and can be used independently of
-working with Git. They can be created, modified, and destroyed with
-`jj bookmark` subcommands, and used in place of IDs in commands.
+working with Git. They can be used in place of IDs in commands, and created,
+modified, and destroyed with `jj bookmark` subcommands.
 
 In my experience they aren't too useful on their own. If you modify a commit the
 bookmark remains pointing at it, but unlike Git branches, they don't
@@ -78,9 +78,7 @@ to move a bookmark around after you push it; see below.
 If you `jj git fetch` to pull changes from the remote, jj will gather new
 commits, update `main@origin`, and also update `main`.
 
-What if you've already changed your local `main`? It now points at two different
-places: your local commit and whatever commit it pulled from the origin. It is
-now _conflicted_.
+What if you've already changed your local `main`?
 
 ```
 $ jj log
@@ -93,9 +91,10 @@ $ jj log
 ~
 ```
 
-In the log, the conflicted bookmark shows as `main??`, pointing at both of the
-commits. You cannot use it until you fix things by manually pointing it at a
-single commit using `jj bookmark move`.
+In the log, the bookmark shows as `main??`, pointing at two different commits
+commits: your local commit and whatever commit it pulled from the origin. It is
+now _conflicted_. You cannot use it until you fix things by manually pointing it
+at a single commit using `jj bookmark move`.
 
 ## Creating bookmarks automatically
 
