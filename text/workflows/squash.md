@@ -59,7 +59,7 @@ change `y`.
 
 ## The squash workflow
 
-Depending on how you think about things, way to use jj is to _never_ use
+Depending on how you think about things, one way to use jj is to _never_ use
 `jj edit` to edit history, and instead _always_ use `jj new` and squash. That
 is, if you want to make a change to some commit X, you instead say `jj new X` to
 start a new commit based on X, and then `jj squash` when you're done with your
