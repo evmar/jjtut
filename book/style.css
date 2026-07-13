@@ -15,10 +15,6 @@ p {
     margin: 0 0 1em;
 }
 
-a {
-    color: hsl(220, 100%, 40%);
-}
-
 pre,
 code {
     font-family: monospace, monospace;
