@@ -1,7 +1,7 @@
 # History
 
 Run `jj log` (or just `jj` by itself, if you followed the default configuration
-in the [setup](../../basics/setup) section) to see the repository history. (In
+in the [setup](../../basics/setup) chapter) to see the repository history. (In
 this tutorial, I've removed dates from my output just to reduce visual noise.)
 
 ```
