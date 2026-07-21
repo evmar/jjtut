@@ -53,7 +53,7 @@ main {
 
 main > header {
     display: flex;
-    align-items: end;
+    align-items: last baseline;
     margin-bottom: 1em;
 }
 main > header > h1 {
