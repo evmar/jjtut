@@ -3,6 +3,12 @@
 (This README is for the underlying text of the tutorial. For the tutorial
 itself, see <https://evmar.github.io/jjtut/>.)
 
+This text was all written by hand by [Evan Martin](https://neugierig.org/), a
+human. I used no AI, and disclaim this in particular so that you can expect that
+the choices made in what to mention, what to leave out, and in what order were
+carefully considered. (After writing most of it I did use AI to check for
+mistakes.)
+
 I welcome feedback and suggestions for the tutorial, please file issues!
 
 ## Text
