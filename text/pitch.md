@@ -1,4 +1,4 @@
-# The Sales Pitch
+# The sales pitch
 
 Is it really worth your time to learn a new version control system? I think the
 answer is yes. Certainly it was for me and many other fans of this tool! I adopt
