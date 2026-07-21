@@ -1,6 +1,6 @@
 body {
     font-family: system-ui, sans-serif;
-    color: hsl(0, 0%, 25%);
+    color: light-dark(hsl(0, 0%, 25%), hsl(0, 0%, 90%));
     line-height: 1.5;
     margin: 0;
 }
@@ -19,17 +19,16 @@ pre,
 code {
     font-family: monospace, monospace;
     font-size: 0.9em;
-    background: hsl(0, 0%, 95%);
+    background: light-dark(hsl(0, 0%, 90%), hsl(0, 0%, 25%));
 }
 
 pre {
-    border-left: solid 1px hsl(0, 0%, 60%);
-    padding-left: 0.8em;
+    padding: 0.5em 0.8em;
     white-space: pre-wrap;
 }
 
 body > header {
-    border-bottom: solid 1px hsl(0, 0%, 60%);
+    border-bottom: solid 1px hsl(0, 0%, 50%);
     text-align: center;
     padding: 1em;
 }
@@ -72,7 +71,6 @@ main > header > h1 {
 /* wide screen, show nav on left */
 @media screen and (min-width: 70em) {
     nav {
-        background: white;
         left: 2em;
         position: fixed;
     }
