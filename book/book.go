@@ -20,6 +20,13 @@ type State struct {
 	tmpl *template.Template
 }
 
+type PageParams struct {
+	Title   string
+	WebPath string
+	Body    template.HTML
+	Root    string
+}
+
 func (s *State) render(path string) error {
 	md, err := os.ReadFile(filepath.Join(s.src, path))
 	if err != nil {
@@ -39,13 +46,13 @@ func (s *State) render(path string) error {
 	}
 	html := markdown.ToHTML(rest, parser.NewWithExtensions(extensions), html.NewRenderer(options))
 
-	page := strings.TrimSuffix(path, ".md")
-	var dst string
-	if strings.HasSuffix(path, "index.md") {
-		dst = page + ".html"
+	var webPath string
+	if p, ok := strings.CutSuffix(path, "index.md"); ok {
+		webPath = p
 	} else {
-		dst = page + "/index.html"
+		webPath = strings.TrimSuffix(path, ".md") + "/"
 	}
+	dst := webPath + "index.html"
 	root := strings.Repeat("../", strings.Count(dst, "/"))
 
 	dst = filepath.Join(s.dst, dst)
@@ -59,16 +66,11 @@ func (s *State) render(path string) error {
 	}
 	defer f.Close()
 
-	return s.tmpl.Execute(f, struct {
-		Title string
-		Page  string
-		Body  template.HTML
-		Root  string
-	}{
-		Title: title,
-		Page:  page,
-		Body:  template.HTML(string(html)),
-		Root:  root,
+	return s.tmpl.ExecuteTemplate(f, "page.gotmpl", &PageParams{
+		Title:   title,
+		WebPath: webPath,
+		Body:    template.HTML(string(html)),
+		Root:    root,
 	})
 }
 
@@ -81,9 +83,6 @@ func (s *State) renderAll() error {
 		if !strings.HasSuffix(path, ".md") {
 			return nil
 		}
-		if filepath.Base(path) == "toc.md" {
-			return nil
-		}
 		path, err = filepath.Rel(s.src, path)
 		if err != nil {
 			return err
@@ -94,25 +93,16 @@ func (s *State) renderAll() error {
 }
 
 func loadTemplates() (*template.Template, error) {
-	tmpl, err := template.ParseFiles("book/page.gotmpl")
-	if err != nil {
-		return nil, err
+	funcs := template.FuncMap{
+		"pagelink": func(cur *PageParams, title, path string) template.HTML {
+			if path == cur.WebPath {
+				return template.HTML(fmt.Sprintf("<b>%s</b>", title))
+			} else {
+				return template.HTML(fmt.Sprintf("<a href='%s%s'>%s</a>", cur.Root, path, title))
+			}
+		},
 	}
-
-	md, err := os.ReadFile("text/toc.md")
-	if err != nil {
-		return nil, err
-	}
-	html := markdown.ToHTML(md, parser.New(), html.NewRenderer(html.RendererOptions{}))
-	toc, err := template.New("toc").Parse(string(html))
-	if err != nil {
-		return nil, err
-	}
-	if _, err := tmpl.AddParseTree("toc", toc.Tree); err != nil {
-		return nil, err
-	}
-
-	return tmpl, nil
+	return template.New("").Funcs(funcs).ParseFiles("book/page.gotmpl", "text/toc.gotmpl")
 }
 
 func run() error {

@@ -10,11 +10,11 @@
     <nav>
         <input id=toc-toggle type=checkbox>
         <label id=toc-label for=toc-toggle>Show table of contents</label>
-        <div id=toc>{{template "toc" .}}</div>
+        <div id=toc>{{template "toc.gotmpl" .}}</div>
     </nav>
     <header>
     <h1>{{.Title}}</h1>
-    <small><a href="https://github.com/evmar/jjtut/issues/new?title=Feedback+on+{{.Page}}">Report an issue or ask a question</a></small>
+    <small><a href="https://github.com/evmar/jjtut/issues/new?title=Feedback+on+{{.WebPath}}">Report an issue or ask a question</a></small>
     </header>
     {{.Body}}
 </main>
