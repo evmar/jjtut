@@ -3,8 +3,8 @@
 [Jujutsu](https://www.jj-vcs.dev/) (from here on, "jj") is a version control
 system that is both simple and powerful.
 
-This site is a tutorial will help you learn to use jj. This tutorial is for
-readers familiar with Git, and aims to be consise and to the point.
+This site is a tutorial will help you learn to use jj, written for readers
+familiar with Git.
 
 Why bother? Read [the Jujutsu sales pitch](pitch).
 
