@@ -18,7 +18,7 @@ From the top:
 
 1. `umnvtwlo` is the empty current commit
 1. `pwnrkwpn` and `qlmqnzqo` were two edits I made
-1. `zzzzzzzz` is a special "root" commit that starts the repository and is is
+1. `zzzzzzzz` is a special "root" commit that starts the repository and is
    always empty
 
 In a terminal, these IDs will have some prefix (often the initial letter)

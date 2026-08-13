@@ -57,8 +57,8 @@ These commands that throw away code may seem risky, but it's also easy to fix
 mistakes when using them.
 
 jj records any changes you make in a log called the
-"[operation log](https://docs.jj-vcs.dev/operation-log/)". This includes not
-only the state after you run a jj command, but also any time it updates the
+"[operation log](https://docs.jj-vcs.dev/latest/operation-log/)". This includes
+not only the state after you run a jj command, but also any time it updates the
 current commit due to noticing a changed file. This log is private and distinct
 from your history of commits.
 
