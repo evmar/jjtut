@@ -90,7 +90,7 @@ abandoned, and you could return to working on it with `jj edit`.
 
 ## Specifying revisions
 
-Almost of the commands we've discussed so far, including `diff`, `desc`,
+Almost all of the commands we've discussed so far, including `diff`, `desc`,
 `squash`, and `abandon`, apply to the current commit by default but also accept
 the `-r` (`--revision`) flag to specify which commit to affect. This means, for
 example, you can abandon a commit without switching to it first.
